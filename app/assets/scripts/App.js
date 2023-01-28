@@ -8,7 +8,11 @@ import Footer from './modules/Footer';
 
 const footer = createRoot(document.querySelector('.footer'))
 const navbar = createRoot(document.querySelector('.header'));
-navbar.render(<Header tab="home" />);
+// Check for page title
+let title = () => {
+  return document.title
+}
+navbar.render(<Header active={title} />);
 footer.render(<Footer />);
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = ({ tab }) => {
+const Header = ({ active }) => {
   return (
     <header className='header'>
       <div className='header__container-outer'>
@@ -17,19 +17,23 @@ const Header = ({ tab }) => {
               <ul className='header__nav-inner'>
                 <li className='header__nav-item'>
                   <span className='header__nav-item-order'>00</span> 
-                  <p className='header__nav-item-text'>Home</p>
+                  <a href="index.html" className='header__nav-item-text'>Home</a>
+                  <span className={`${active() == 'Home' ? 'header__nav-item-marker--active' : ''} header__nav-item-marker`}></span>
                 </li>
                 <li className='header__nav-item'>
                   <span className='header__nav-item-order'>01</span> 
-                  <p className='header__nav-item-text'>Destination</p>
+                  <a href='destination-moon.html' className='header__nav-item-text'>Destination</a>
+                  <span className={`${active() == 'Destination' ? 'header__nav-item-marker--active' : ''} header__nav-item-marker`}></span>
                 </li>
                 <li className='header__nav-item'>
                   <span className='header__nav-item-order'>02</span> 
-                  <p className='header__nav-item-text'>Crew</p>
+                  <a href='crew.html' className='header__nav-item-text'>Crew</a>
+                  <span className={`${active() == 'Crew' ? 'header__nav-item-marker--active' : ''} header__nav-item-marker`}></span>
                   </li>
                 <li className='header__nav-item'>
                   <span className='header__nav-item-order'>03</span> 
-                  <p className='header__nav-item-text'>Technology</p>
+                  <a href='technology.html' className='header__nav-item-text'>Technology</a>
+                  <span className={`${active() == 'Technology' ? 'header__nav-item-marker--active' : ''} header__nav-item-marker`}></span>
                 </li>
               </ul>
             </nav>
