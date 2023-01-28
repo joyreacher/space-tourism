@@ -5,4 +5,13 @@
 }
 body{
   color: white;
+  
+  @font-face {
+    font-family: 'Barlow Condensed';
+    src:url('/app/assets/styles/fonts/BarlowCondensed-Regular.ttf'); 
+    }
+  @font-face{
+    font-family: 'Bellefair';
+    src:url('/app/assets/styles/fonts/Bellefair-Regular.ttf');
+  }
 }

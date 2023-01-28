@@ -49,7 +49,11 @@ let config = {
               presets: ['@babel/preset-react','@babel/preset-env']
             }
           }
-        }
+        },
+        {
+          test: /\.(woff|woff2|eot|ttf|otf)$/i,
+          type: 'assets/resource',
+          },
         ]
       }
 }

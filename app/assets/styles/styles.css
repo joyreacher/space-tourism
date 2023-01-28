@@ -1,5 +1,6 @@
 @import "normalize.css";
-
+/* Base */
+@import "./base/_global.scss";
 /* Pages */
 @import "./pages/_home.scss";
 
