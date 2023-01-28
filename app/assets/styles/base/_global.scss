@@ -10,6 +10,14 @@ body{
     font-family: 'Barlow Condensed';
     src:url('/app/assets/styles/fonts/BarlowCondensed-Regular.ttf'); 
     }
+  @font-face {
+    font-family: 'Barlow Bold';
+    src:url('/app/assets/styles/fonts/BarlowCondensed-Bold.ttf'); 
+  }
+  @font-face {
+    font-family: 'Barlow Black';
+    src:url('/app/assets/styles/fonts/BarlowCondensed-Black.ttf'); 
+  }
   @font-face{
     font-family: 'Bellefair';
     src:url('/app/assets/styles/fonts/Bellefair-Regular.ttf');

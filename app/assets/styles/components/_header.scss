@@ -38,6 +38,13 @@
     }
     &-item{
       font-family: 'Barlow Condensed';
+      &-order{
+        font-family: 'Barlow Bold';
+      }
+      &-text{
+        margin-left:.70em;
+        display:inline;
+      }
     }
   }
   &__image{
@@ -47,5 +54,7 @@
     width:473px;
     height:5px;
     z-index: 3;
+    fill:"#979797";
+    stroke:hsla(0, 0%, 59%, 29%)
   }
 }
