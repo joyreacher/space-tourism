@@ -2,3 +2,4 @@
 .prettierignore
 
 node_modules
+docs
