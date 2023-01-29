@@ -17,22 +17,22 @@ const Header = ({ active }) => {
               <ul className='header__nav-inner'>
                 <li className='header__nav-item'>
                   <span className='header__nav-item-order'>00</span> 
-                  <a href="index.html" className='header__nav-item-text'>Home</a>
+                  <a href="index.html" className='header__nav-item-text'>HOME</a>
                   <span className={`${active() == 'Home' ? 'header__nav-item-marker--active' : ''} header__nav-item-marker`}></span>
                 </li>
                 <li className='header__nav-item'>
                   <span className='header__nav-item-order'>01</span> 
-                  <a href='destination-moon.html' className='header__nav-item-text'>Destination</a>
+                  <a href='destination-moon.html' className='header__nav-item-text'>DESTINATION</a>
                   <span className={`${active() == 'Destination' ? 'header__nav-item-marker--active' : ''} header__nav-item-marker`}></span>
                 </li>
                 <li className='header__nav-item'>
                   <span className='header__nav-item-order'>02</span> 
-                  <a href='crew.html' className='header__nav-item-text'>Crew</a>
+                  <a href='crew.html' className='header__nav-item-text'>CREW</a>
                   <span className={`${active() == 'Crew' ? 'header__nav-item-marker--active' : ''} header__nav-item-marker`}></span>
                   </li>
                 <li className='header__nav-item'>
                   <span className='header__nav-item-order'>03</span> 
-                  <a href='technology.html' className='header__nav-item-text'>Technology</a>
+                  <a href='technology.html' className='header__nav-item-text'>TECHNOLOGY</a>
                   <span className={`${active() == 'Technology' ? 'header__nav-item-marker--active' : ''} header__nav-item-marker`}></span>
                 </li>
               </ul>

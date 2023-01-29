@@ -4,6 +4,50 @@ body{
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
-  color:white;
-  font-family: 'Bellefair';
+}
+.page{
+  &__home-container{
+    padding: 0 13.5em;
+    min-height: 69vh;
+    display:flex;
+    align-items: flex-end;
+    &--inner{
+      display:flex;
+      flex-direction: column;
+      max-width: 47em;
+      justify-content: baseline;
+    }
+    &--button{
+      margin-left: 386px;
+      margin-bottom: -2em;
+    }
+  }
+  &__home-main{
+    &-cta{
+      width:274px;
+      height:274px;
+      border-radius:200px;
+      font-family: 'Bellefair';
+      font-size: 2.25rem;
+    }
+    &-primary{
+      margin:0;
+      font-family: 'Bellefair';
+      font-size: 9.31rem;
+      margin-bottom:.3em;
+    }
+    &-secondary{
+      font-family: 'Barlow Condensed';
+      font-size: 1.75rem;
+      letter-spacing: 4.72px;
+      color: #D0D6F9;
+    }
+    &-copy{
+      font-family: 'Barlow Regular';
+      font-size: 1.125rem;
+      margin-top: -2.3em;
+      line-height: 32px;
+    }
+  }
+  
 }

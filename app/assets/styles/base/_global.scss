@@ -5,7 +5,11 @@
 }
 body{
   color: white;
-  
+  font-size: 62.5%;
+  @font-face {
+    font-family: 'Barlow Regular';
+    src:url('/app/assets/styles/fonts/Barlow-Regular.ttf'); 
+    }
   @font-face {
     font-family: 'Barlow Condensed';
     src:url('/app/assets/styles/fonts/BarlowCondensed-Regular.ttf'); 
