@@ -1,17 +1,26 @@
+/***************************************************************************************
+*    Title: Git a Web Developer Job: Mastering the Modern Workflow
+*    Author: Brad Schiff
+*    Date: 1/30/2023
+*
+***************************************************************************************/
+
 const path = require('path')
 const fse = require('fs-extra');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const postCSSPlugins = 
-    // list of plugins we need
-    require('postcss-import');
-    require('postcss-simple-vars');
-    require('postcss-mixins');
-    require('postcss-nested');
-    require('autoprefixer');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const postCSSPlugins = [
+  require('postcss-import'),
+  require('postcss-mixins'),
+  require('postcss-simple-vars'),
+  require('postcss-nested'),
+  require('autoprefixer')
+];
 
-let currentTask = 'dev'
+// watches which npm task is running (dev, build)
+const currentTask = process.env.npm_lifecycle_event
 class RunAfterCompile{
   apply(compiler){
     compiler.hooks.done.tap('copy imgs', function(){
@@ -30,8 +39,7 @@ let pages = fse.readdirSync('./app').filter((file)=>{
 })
 let cssConfig = {
   test: /\.css$/i,
-  use: ['css-loader', {loader: 'postcss-loader', options: {postcssOptions: {plugins: [postCSSPlugins, require.resolve('postcss-simple-vars'),
-  require.resolve('postcss-nested'), require.resolve('autoprefixer'), postCSSPlugins({ myOption: true })]}}}]
+  use: ['css-loader?url=false', {loader: 'postcss-loader', options: {postcssOptions: {plugins: postCSSPlugins}}}]
 }
 let config = {
   entry: './app/assets/scripts/App.js' ,
@@ -52,11 +60,23 @@ let config = {
         },
         {
           test: /\.(woff|woff2|eot|ttf|otf)$/i,
+          type: 'asset/resource'
           },
         ]
       }
 }
-if(currentTask === 'build'){
+if (currentTask === 'build'){
+  config.module.rules.push({
+    test: /\.js$/,
+    exclude: /(node_modules)/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env']
+      }
+    }
+  })
+  
   cssConfig.use.unshift(MiniCssExtractPlugin.loader)
   config.output = {
     filename: '[name].[chunkhash].js',
@@ -65,7 +85,9 @@ if(currentTask === 'build'){
 }
   config.mode = "production"
   config.optimization = {
-    splitChunks: {chunks:'all'}
+    splitChunks: {chunks:'all'},
+    minimize: true,
+    minimizer: [`...`, new CssMinimizerPlugin()]
   }
   config.plugins.push(
     new CleanWebpackPlugin(), 
@@ -80,7 +102,10 @@ if(currentTask === 'dev'){
     path: path.resolve(__dirname, 'app')
   }
   config.devServer = {
-    static: path.join(__dirname, 'app'),
+    before: function(app, server) {
+      server._watch('./app/**/*.html')
+    },
+    contentBase: path.join(__dirname, 'app'),
     hot: true, 
     port: 3000,
     host: '0.0.0.0',
