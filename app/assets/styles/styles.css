@@ -1,6 +1,8 @@
 @import "normalize.css";
 /* Base */
 @import "./base/_global.scss";
+/* Components */
+@import './components/_background-image.scss';
 /* Pages */
 @import "./pages/_home.scss";
 
