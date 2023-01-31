@@ -1,0 +1,41 @@
+@define-mixin largeScreensMaxWidth1280{
+  @media (max-width: 1280px){
+    @mixin-content;
+  }
+}
+@define-mixin largeScreensMaxWidth1044{
+  @media (max-width: 1044px){
+    @mixin-content;
+  }
+}
+@define-mixin mediumScreensMaxWidth890{
+  @media (max-width: 890px){
+    @mixin-content;
+  }
+}
+@define-mixin mediumScreensMaxWidth768{
+  @media (max-width: 768px){
+    @mixin-content;
+  }
+}
+
+@define-mixin smallScreensMaxWidth565{
+  @media (max-width: 565px){
+    @mixin-content;
+  }
+}
+@define-mixin smallScreensMinWidth565{
+  @media (min-width: 565px){
+    @mixin-content;
+  }
+}
+
+
+
+
+
+@define-mixin removeDividerLine {
+  @media (max-width: 1010px){
+    @mixin-content;
+  }
+}
