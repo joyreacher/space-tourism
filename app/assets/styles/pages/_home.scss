@@ -1,9 +1,9 @@
 .page{
   &__home-container{
-    padding: 0 13.5em;
-    min-height: 69vh;
+    flex: 1 0 auto;
+    padding: 10em 13.5em 0 13.5em;
     display:flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
     @mixin largeScreensMaxWidth1044{
       padding: 4em 13.5em;
