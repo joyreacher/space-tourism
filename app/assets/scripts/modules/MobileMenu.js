@@ -12,6 +12,7 @@ class MobileMenu{
     
     this.listText = document.querySelectorAll('.header__mobile-nav-item')
     this.events()
+    this.handleMobileNav()
     
     this.modalAnimation()
     this.textAnimation()
@@ -38,6 +39,9 @@ class MobileMenu{
   events() {
     this.icon.addEventListener('click', () =>this.toggle())
   }
+  handleMobileNav() {
+    this.listText.forEach((el) => el.addEventListener('click', () => this.toggle()))
+  }
   toggle() {
     if(this.toggleAnimation.reversed()){
       this.toggleAnimation.play()
@@ -45,8 +49,6 @@ class MobileMenu{
       this.toggleAnimation.reverse()
     }
     this.body.classList.toggle('overflow-hidden')
-    // this.modal.classList.toggle('header__mobile--active')
-    
   }
 }
 export default MobileMenu
