@@ -24,13 +24,22 @@
     }
   }
   &__image{
+    margin-right: 3em;
+    margin-left: 3.438em;
   }
   &__divider-line{
-
-    width:473px;
+    
+    margin-right: -3em;
+    width:100%;
     height:5px;
     z-index: 3;
     fill:#979797;
-    stroke:hsla(0, 0%, 59%, 29%)
+    stroke:hsla(0, 0%, 59%, 29%);
+    
+    
+    @mixin removeDividerLine{
+      display:none;
+    }
+    
   }
 }
