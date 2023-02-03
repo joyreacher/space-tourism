@@ -4,6 +4,25 @@
     min-height: 69vh;
     display:flex;
     align-items: flex-end;
+    justify-content: space-between;
+    @mixin largeScreensMaxWidth1044{
+      padding: 4em 13.5em;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-around;
+    }
+    @mixin mediumScreensMaxWidth768{
+      flex-direction: column;
+      min-height:100vh;
+      align-items: center;
+      justify-content: space-around;
+      padding: 0 5.438em;
+    }
+    @mixin smallScreensMaxWidth565{
+      justify-content: flex-start;
+      padding: 1.8em 3.438em 6em 3.438em;
+      min-height: auto;
+    }
     &--inner{
       display:flex;
       flex-direction: column;
@@ -13,33 +32,68 @@
     &--button{
       margin-left: 386px;
       margin-bottom: -2em;
+      @mixin largeScreensMaxWidth1280{
+        margin-left:143px;
+      }
+      @mixin largeScreensMaxWidth1044{
+        margin-left:0;
+        margin-top: 8em;
+      }
+      @mixin mediumScreensMaxWidth768{
+        margin-left: 0;
+      }
+      @mixin smallScreensMaxWidth565{
+        margin-top:5.5em;
+      }
     }
   }
   &__home-main{
+    &-cta, &-primary, &-secondary, &-copy{
+      @mixin mediumScreensMaxWidth768{
+        text-align: center;
+      }
+    }
     &-cta{
       width:274px;
       height:274px;
       border-radius:200px;
       font-family: 'Bellefair';
       font-size: 2.25rem;
+      @mixin smallScreensMaxWidth565{
+        width:124px;
+        height:124px;
+        font-size: 1.25rem;
+      }
     }
     &-primary{
       margin:0;
       font-family: 'Bellefair';
       font-size: 9.31rem;
       margin-bottom:.3em;
+      @mixin smallScreensMaxWidth565{
+        font-size: 5rem;
+        margin: .34em 0 .45em 0;
+      }
     }
     &-secondary{
       font-family: 'Barlow Condensed';
       font-size: 1.75rem;
       letter-spacing: 4.72px;
       color: #D0D6F9;
+      @mixin smallScreensMaxWidth565{
+        font-size: 1.01rem;
+        letter-spacing: 2.82px;
+      }
     }
     &-copy{
       font-family: 'Barlow Regular';
       font-size: 1.125rem;
       margin-top: -2.3em;
       line-height: 32px;
+      @mixin smallScreensMaxWidth565{
+        font-size: .95rem;
+        margin: 0;
+      }
     }
   }
   
