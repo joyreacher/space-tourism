@@ -1,7 +1,14 @@
 import React from 'react';
 
 const Header = ({ active }) => {
+  let fileName = active.charAt(0).toUpperCase() + active.slice(1)
   return (
+    <>
+    <picture>
+        <source srcSet={`assets/images/${fileName}/background-${fileName}-desktop.jpg 768w`} media="(min-width:1440px)"/>
+        <source srcSet={`assets/images/${fileName}/background-${fileName}-tablet.jpg 768w`} media="(min-width:768px)"/>
+        <img srcSet={`assets/images/${fileName}/background-${fileName}-mobile.jpg 375w`} alt="background-small" id="bg-image" />
+      </picture>  
     <header className='header'>
       <div className='header__container-outer'>
         <div className='header__container-inner'>
