@@ -14,23 +14,25 @@ class MobileMenu{
     this.events()
     
     this.modalAnimation()
-    this.iconAnimation()
     this.textAnimation()
+    this.iconAnimation()
   }
   modalAnimation() {
     this.toggleAnimation
-    .fromTo(this.modal, {display:'none',opacity:0},{display:'flex',opacity:1}, '<')
-    .fromTo(this.modal,{x:'100%'}, {x: 0}, '<')
+    .fromTo(this.modal,  {autoAlpha: 0, visibility: 'hidden', display:'none',opacity:0},{autoAlpha: 1, visibility: 'visible', display:'flex',opacity:1}, '<')
+    .fromTo(this.modal, .25,{ease: 'power2.in', x:'100%'}, {x:0, ease: 'power2.in'}, '<')
+    .fromTo(this.modal, .85,{backdropFilter:"blur(0rem)", ease: 'power2.in'}, {backdropFilter:"blur(1.4rem)", ease: 'power2.inOut'}, '<');
+    
   }
   iconAnimation() {
     this.toggleAnimation
     .fromTo(this.iconMid, {opacity: 1}, {opacity: '0'}, '<')
-    .fromTo(this.iconTop, {transform: 'rotate(0deg) translate(0)'},{transform: 'rotate(45deg) translate(.5em, 1.25em)'}, '<')
-    .fromTo(this.iconBottom, {transform: 'rotate(0deg) translateY(0)'},{transform: 'rotate(-45deg) translate(.5em, -1.15em)'}, '<')
+    .fromTo(this.iconTop, {transform: 'rotate(0deg) translate(0)'},{transform: 'rotate(45deg) translate(.5em, 1.25em)', ease: 'power2.inOut'}, '<')
+    .fromTo(this.iconBottom, {transform: 'rotate(0deg) translateY(0)'},{transform: 'rotate(-45deg) translate(.5em, -1.15em)', ease: 'power2.inOut'}, '<')
   }
   textAnimation(){
     this.toggleAnimation
-      .fromTo(this.listText, {opacity:0}, {opacity:1, stagger:.03, ease: 'power3.inOut'}, "-=.5")
+      .fromTo(this.listText, .9,{ease: 'power2.in', opacity:0, y:'-30px'}, {opacity:1, stagger:.03, y:0, ease: 'power2.out'}, '-=.15')
   }
   
   events() {
