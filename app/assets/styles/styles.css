@@ -9,6 +9,7 @@
 @import "./pages/_home.scss";
 
 /* Components */
+@import './components/_background-image.scss';
 @import "./components/_header.scss";
 @import "./components/_header__mobile.scss";
 @import "./components/_header__nav.scss";
