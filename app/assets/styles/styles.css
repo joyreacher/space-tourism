@@ -4,10 +4,11 @@
 @import "./base/_global.scss";
 /* Utilities */
 @import './utilities/_overflow.scss';
-/* Components */
-@import './components/_background-image.scss';
+
 /* Pages */
 @import "./pages/_home.scss";
 
 /* Components */
 @import "./components/_header.scss";
+@import "./components/_header__mobile.scss";
+@import "./components/_header__nav.scss";
