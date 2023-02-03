@@ -9,7 +9,7 @@ const Header = ({ active }) => {
         <source srcSet={`assets/images/${fileName}/background-${fileName}-tablet.jpg 768w`} media="(min-width:768px)"/>
         <img srcSet={`assets/images/${fileName}/background-${fileName}-mobile.jpg 375w`} alt="background-small" id="bg-image" />
       </picture>  
-    <header className='header'>
+    <section className='header'>
       <div className='header__container-outer'>
         <div className='header__container-inner'>
           <section className='header__section-left'>
@@ -79,7 +79,7 @@ const Header = ({ active }) => {
           </section>
         </div>
       </div>
-    </header>
+    </section>
     </>
   );
 };

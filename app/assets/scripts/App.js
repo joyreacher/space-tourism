@@ -31,27 +31,27 @@ barba.init({
     {
       namespace:'home',
       afterEnter(data) {
-        ReactDOM.render(<Header active={data.next.namespace}/>, document.querySelector('.header'))
+        ReactDOM.render(<Header active={data.next.namespace}/>, document.querySelector('#header'))
         new MobileMenu()
       },
     },
     {
       namespace:'destination',
       afterEnter(data) {
-        ReactDOM.render(<Header active={data.next.namespace}/>, document.querySelector('.header'))
+        ReactDOM.render(<Header active={data.next.namespace}/>, document.querySelector('#header'))
         new MobileMenu()
       },
     },
     {
       namespace:'crew',
       afterEnter(data) {
-        ReactDOM.render(<Header active={data.next.namespace}/>, document.querySelector('.header'))
+        ReactDOM.render(<Header active={data.next.namespace}/>, document.querySelector('#header'))
         new MobileMenu()
       },
     },{
       namespace:'technology',
       afterEnter(data) {
-        ReactDOM.render(<Header active={data.next.namespace}/>, document.querySelector('.header'))
+        ReactDOM.render(<Header active={data.next.namespace}/>, document.querySelector('#header'))
         new MobileMenu()
       },
     }
@@ -59,7 +59,7 @@ barba.init({
 });
 
 
-ReactDOM.render(<Footer/>, document.querySelector('.footer'))
+ReactDOM.render(<Footer/>, document.querySelector('#footer'))
 
 
 if (module.hot) {

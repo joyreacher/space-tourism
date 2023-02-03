@@ -2,9 +2,9 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <div>
-      Footer
-    </div>
+    <section className='footer'>
+      <small>This project is a Frontend Mentor Design built by Brian Thomas</small>
+    </section>
   );
 };
 
