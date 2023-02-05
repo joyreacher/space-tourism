@@ -4,7 +4,10 @@
     padding: 10em 13.5em 0 13.5em;
     display:flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    @mixin largeScreensMaxWidth1440{
+      justify-content: space-between;
+    }
     @mixin largeScreensMaxWidth1044{
       padding: 4em 13.5em;
       flex-direction: column;
