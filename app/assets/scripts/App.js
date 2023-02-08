@@ -8,6 +8,7 @@ import Header from './modules/Header';
 import Footer from './modules/Footer';
 import MobileMenu from './modules/MobileMenu';
 import ActiveNav from './modules/ActiveNav'
+import DestinationContent from './modules/DestinationContent'
 import ContentSwitch from './modules/ContentSwitch'
 
 
@@ -51,6 +52,7 @@ barba.init({
       },
       
       afterEnter(data) {
+        ReactDOM.render(<DestinationContent />, document.querySelector('#destination-content-container'))
         new ContentSwitch(data.next.namespace)
         ReactDOM.render(<Header active={data.next.namespace}/>, document.querySelector('#header'))
         new MobileMenu()
