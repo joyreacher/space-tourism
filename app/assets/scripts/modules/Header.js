@@ -5,8 +5,8 @@ const Header = ({ active }) => {
   return (
     <>
     <picture>
-        <source srcSet={`assets/images/${fileName}/background-${fileName}-desktop.jpg 768w`} media="(min-width:1440px)"/>
-        <source srcSet={`assets/images/${fileName}/background-${fileName}-tablet.jpg 768w`} media="(min-width:768px)"/>
+        <source srcSet={`assets/images/${fileName}/background-${fileName}-desktop.jpg 768w`} media="(min-width:769px)"/>
+        <source srcSet={`assets/images/${fileName}/background-${fileName}-tablet.jpg 768w`} media="(min-width:565px)"/>
         <img srcSet={`assets/images/${fileName}/background-${fileName}-mobile.jpg 375w`} alt="background-small" id="bg-image" />
       </picture>  
     <section className='header'>
