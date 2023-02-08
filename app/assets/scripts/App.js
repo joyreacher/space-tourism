@@ -19,15 +19,15 @@ barba.init({
       return gsap.to('#bg-image', .95,{ opacity: 0, ease:"power2.out", transform: 'scale(1.05)'})
     },
     leave(data) {
-      return gsap.to(data.current.container, .25,{opacity: 0, display:'none', ease: "power2.in"});
+      return gsap.to(data.current.container, .25,{autoAlpha:0, opacity: 0, display:'none', ease: "power2.in"});
     },
     enter(data) {
-      return gsap.from(data.next.container, .25, { opacity: 0, ease: 'power2.in'});
+      return gsap.from(data.next.container, .25, {autoAlpha:0, opacity: 0, ease: 'power2.in'});
     },
     afterEnter(){
       gsap.set('body', {overflow:'auto'})
-      return gsap.fromTo('#bg-image', {opacity: 0, ease:"power2.in", transform:'scale(1.05)'},{duration: 1.2, opacity:1, ease:"power2.out",transform:'scale(1)'}, '+=.25');
-    },
+      return gsap.fromTo('#bg-image', {opacity: 0, ease:"power2.in", transform:'scale(1.05)', autoAlpha:0},{autoAlpha:1,duration: 1.2, opacity:1, ease:"power2.out",transform:'scale(1)'}, '+=.25');
+    }
   }],
   views:[
     // HOME
