@@ -33,13 +33,13 @@ barba.init({
     // HOME
     {
       namespace:'home',
-      afterLeave(){
-        new ActiveNav().leave01('home');
+      afterLeave(data){
+        new ActiveNav().leave(data.current.namespace, data.next.namespace)
       },
       afterEnter(data) {
         ReactDOM.render(<Header active={data.next.namespace}/>, document.querySelector('#header'))
         new MobileMenu()
-        new ActiveNav().enter01('home')
+        new ActiveNav().enter(data.current.namespace, data.next.namespace)
       },
     },
     
@@ -47,54 +47,38 @@ barba.init({
     {
       namespace:'destination',
       afterLeave(data){
-        if(data.next.namespace != 'home'){
-          new ActiveNav().leave23('right')
-        }else{
-          new ActiveNav().leave23('left')
-        }
+        new ActiveNav().leave(data.current.namespace, data.next.namespace)
       },
       
       afterEnter(data) {
         new ContentSwitch(data.next.namespace)
         ReactDOM.render(<Header active={data.next.namespace}/>, document.querySelector('#header'))
         new MobileMenu()
-        if(data.current.namespace != 'home'){
-          new ActiveNav().enter23('right')
-        }else{
-          new ActiveNav().enter23('left')
-        }
+        new ActiveNav().enter(data.current.namespace, data.next.namespace)
       },
     },
     // CREW
     {
       namespace:'crew',
       afterLeave(data){
-        if(data.next.namespace != 'technology'){
-          new ActiveNav().leave23('left')
-        }else{
-          new ActiveNav().leave23('right')
-        }
+        new ActiveNav().leave(data.current.namespace, data.next.namespace)
       },
       afterEnter(data) {
         ReactDOM.render(<Header active={data.next.namespace}/>, document.querySelector('#header'))
         new MobileMenu()
-        if(data.current.namespace != 'technology'){
-          new ActiveNav().enter23('left')
-        }else{
-          new ActiveNav().enter23('right')
-        }
+        new ActiveNav().enter(data.current.namespace, data.next.namespace)
       },
     },
     // Technology
     {
       namespace:'technology',
-      afterLeave(){
-        new ActiveNav().leave01('technology');
+      afterLeave(data){
+        new ActiveNav().leave(data.current.namespace, data.next.namespace)
       },
       afterEnter(data) {
         ReactDOM.render(<Header active={data.next.namespace}/>, document.querySelector('#header'))
         new MobileMenu()
-        new ActiveNav().enter01('technology')
+        new ActiveNav().enter(data.current.namespace, data.next.namespace)
       },
     }
   ]
