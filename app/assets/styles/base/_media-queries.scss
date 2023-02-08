@@ -3,8 +3,18 @@
     @mixin-content;
   }
 }
+@define-mixin largeScreensMaxWidth1300{
+  @media (max-width: 1300px){
+    @mixin-content;
+  }
+}
 @define-mixin largeScreensMaxWidth1280{
   @media (max-width: 1280px){
+    @mixin-content;
+  }
+}
+@define-mixin largeScreensMaxWidth1186{
+  @media (max-width: 1186px){
     @mixin-content;
   }
 }
@@ -20,6 +30,12 @@
 }
 @define-mixin mediumScreensMaxWidth768{
   @media (max-width: 768px){
+    @mixin-content;
+  }
+}
+
+@define-mixin mediumScreensMaxWidth675{
+  @media (max-width: 675px){
     @mixin-content;
   }
 }

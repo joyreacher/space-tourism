@@ -7,6 +7,7 @@
 
 /* Pages */
 @import "./pages/_home.scss";
+@import "./pages/_destination.scss";
 
 /* Components */
 @import './components/_background-image.scss';
