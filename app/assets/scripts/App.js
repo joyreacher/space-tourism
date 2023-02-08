@@ -8,6 +8,7 @@ import Header from './modules/Header';
 import Footer from './modules/Footer';
 import MobileMenu from './modules/MobileMenu';
 import ActiveNav from './modules/ActiveNav'
+import ContentSwitch from './modules/ContentSwitch'
 
 
 barba.init({
@@ -54,6 +55,7 @@ barba.init({
       },
       
       afterEnter(data) {
+        new ContentSwitch(data.next.namespace)
         ReactDOM.render(<Header active={data.next.namespace}/>, document.querySelector('#header'))
         new MobileMenu()
         if(data.current.namespace != 'home'){
