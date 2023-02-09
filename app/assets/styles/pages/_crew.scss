@@ -1,0 +1,59 @@
+.page{
+  &__crew-container{
+    &--outer{}
+    &--inner{
+      padding: 0 13.5em 0 13.5em;
+    }
+  }
+  &__crew{
+    &--section-1{
+    }
+    &--section-2{}
+    &--content{
+      
+      &-hidden{
+        display:none;
+      }
+      &-active{
+        display:flex;
+        align-items: baseline;
+      }
+    }
+    &--title{
+      &-container{
+        
+      }
+      &-number{
+        
+      }
+      &-title{
+        
+      }
+    }
+    &--main{
+      
+    }
+    &--menu{
+      display:flex;
+      justify-content: space-evenly;
+      list-style-type: none;
+    }
+    &--marker{
+      display:block;
+      background-color: white;
+      border-radius: 100% 100%;
+      min-height: 2em;
+      width: 2em;
+    }
+    &--pagination-number{
+      width:100%;
+      max-width: max-content;
+      font-family: 'Barlow Condensed';
+      font-size: 1.2rem;
+      letter-spacing: 2.7px;
+      &--active{
+        display:block;
+      }
+    }
+  }
+}

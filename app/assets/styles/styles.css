@@ -8,7 +8,8 @@
 /* Pages */
 @import "./pages/_home.scss";
 @import "./pages/_destination.scss";
-
+@import "./pages/_crew.scss";
+@import "./pages/_technology.scss";
 /* Components */
 @import './components/_background-image.scss';
 @import "./components/_header.scss";
