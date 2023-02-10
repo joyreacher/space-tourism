@@ -2,13 +2,17 @@
   &__crew-container{
     &--outer{}
     &--inner{
-      padding: 0 13.5em 0 13.5em;
+      padding: 0 11em 0 13.5em;
     }
   }
   &__crew{
     &--section-1{
     }
-    &--section-2{}
+    &--section-2{
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+    }
     &--content{
       
       &-hidden{
@@ -16,34 +20,67 @@
       }
       &-active{
         display:flex;
-        align-items: baseline;
+        align-items: center;
+        justify-content: space-between;
       }
     }
     &--title{
+      font-family: 'Barlow Condensed';
+      line-height: 3.2rem;
+      letter-spacing: 4.725px;
+      font-size: 2.8rem;
       &-container{
-        
+        display:flex;
+        align-items: center;
       }
       &-number{
-        
+        font-family: 'Barlow Condensed';
+        letter-spacing: 4.725px;
+        font-size: 2.8rem;
+        opacity:.25;
       }
       &-title{
         
       }
     }
+    &--image{
+      position:relative;
+      bottom:0;
+    }
     &--main{
-      
+      margin:0 5em 0 0;
+      min-width: 610px;
+      height: 406px;
+      display:flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     &--menu{
       display:flex;
-      justify-content: space-evenly;
+      justify-content: flex-start;
       list-style-type: none;
+      &-container{
+        
+      }
     }
     &--marker{
       display:block;
       background-color: white;
+      opacity: .17;
       border-radius: 100% 100%;
-      min-height: 2em;
-      width: 2em;
+      min-height: 1.5rem;
+      width: 1.5rem;
+      transition: opacity .75s ease-out;
+      &:hover{
+        opacity:.45;
+        transition: all .15s ease-in;
+      }
+      &-active{
+
+        &:hover{
+          opacity: 1;
+        }
+      }
     }
     &--pagination-number{
       width:100%;
@@ -51,9 +88,44 @@
       font-family: 'Barlow Condensed';
       font-size: 1.2rem;
       letter-spacing: 2.7px;
-      &--active{
+      margin: 0 2.3em 0 0;
+      cursor: pointer;
+      &-active{
         display:block;
       }
     }
+    &--text{
+      &-role{
+        font-family: 'Bellefair';
+        font-size: 3.2rem;
+        opacity:.5;
+      }
+      &-name{
+        font-size: 5.6rem;
+        margin:.5em 0 .5em 0;
+        word-break: keep-all;
+      }
+      &-bio{
+        font-family: 'Barlow Regular';
+        font-size: 1.8rem;
+        margin: 0 0 3em 0;
+        line-height: 3.2rem;
+        max-width: 444px;
+        min-height: 16rem;
+      }
+    }
+    
   }
+}
+#hurley{
+  margin: 5.25em 0 0 5.5em;
+}
+#shuttleworth{
+  margin: 14.8em 0 0 5.5em;
+} 
+#glover{
+  margin: 14em 0 0 11.5em;
+}
+#ansari{
+  margin: 20.95em 0 0 5.5em;
 }
