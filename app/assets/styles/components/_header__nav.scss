@@ -42,7 +42,7 @@
       }
       &-order{
         font-family: 'Barlow Bold';
-        font-size: 1.1rem;
+        font-size: 1.6rem;
         @mixin mediumScreensMaxWidth768{
           display:none;
         }
@@ -56,7 +56,7 @@
         text-decoration: none;
         margin-left:.70em;
         display:inline;
-        font-size: 1.1rem;
+        font-size: 1.6rem;
         letter-spacing: 2.7px;
         @mixin mediumScreensMaxWidth768{
           margin-left:0;

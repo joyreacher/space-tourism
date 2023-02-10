@@ -1,6 +1,8 @@
 .page{
   &__destination-container{
-    
+    &--outer{
+      height:100vh;
+    }
     &--inner{
     margin-bottom: 7.1em;
     flex: 1 0 auto;
@@ -39,21 +41,25 @@
   &__destination{
     &--description{
       font-family: 'Barlow Regular';
-      font-size: 1.1rem;
+      font-size: 1.8rem;
       line-height: 32px;
-      min-height:10em;
+      min-height:7em;
+      @mixin largeScreensMaxWidth1044{
+        min-height:10em;
+      }
       @mixin largeScreensMaxWidth1186{
         min-height: 7em;
       }
       @mixin smallScreensMaxWidth565{
-        min-height: 11em;
-        font-size: 15px;
+        min-height: 9em;
+        line-height: 25px;
+        font-size: 1.5rem;
       }
     }
     &--text{
       &-distance, &-travel{
         font-family: 'Bellefair';
-        font-size: 1.8rem;
+        font-size: 2.8rem;
       }
     }
     &--line{
@@ -68,7 +74,7 @@
         margin:4em 0 2em 0;
       }
       @mixin smallScreensMaxWidth565{
-        margin:.25em 0 .05em 0;
+        margin:2.25em 0 .05em 0;
       }
     }
     &--distance{
@@ -96,9 +102,8 @@
       }
 
       &-title{
-        font-size: 5rem;
+        font-size: 10rem;
         margin:0;
-        max-width:280px;
         @mixin largeScreensMaxWidth1186{
           text-align: center;
           max-width: none;
@@ -164,13 +169,15 @@
       width:100%;
       max-width: max-content;
       font-family: 'Barlow Condensed';
-      font-size: 1.2rem;
+      font-size: 1.6rem;
       letter-spacing: 2.7px;
+      color: #D0D6F9;
       @mixin largeScreensMaxWidth1186{
         margin:2em 0;
       }
       @mixin smallScreensMaxWidth565{
         margin:.2em 0;
+        font-size:1.4rem;
       }
       &:not(:last-of-type){
         margin-right:1em;
@@ -189,6 +196,7 @@
         }
       }
       &--active{
+        color:white;
         span{
           background-color:white;
         }
@@ -201,6 +209,7 @@
       display:flex;
       cursor: pointer;
       width: 70%;
+      min-height: 6em;
       @mixin largeScreensMaxWidth1186{
         justify-content: center;
       }
@@ -213,6 +222,9 @@
           display:flex;
           justify-content: center;
           margin: 0;
+        }
+        @mixin smallScreensMaxWidth565{
+          margin:2.8em 0 1em 0;
         }
         &--outer{
           height:max-content;
@@ -244,11 +256,11 @@
         font-size: 1.55rem;
       }
       @mixin mediumScreensMaxWidth768{
-        font-size: 1.05rem;
+        font-size: 1.6rem;
       }
       
       &-distance, &-travel{
-        font-size: .75rem;
+        font-size: 1.4rem;
         font-family: 'Barlow Condensed';
         letter-spacing: 2.3625px;
         line-height: 17px;
@@ -262,7 +274,7 @@
           font-size: 1.55rem;
         }
         @mixin mediumScreensMaxWidth768{
-          font-size: 1.05rem;
+          font-size: 1.6rem;
         }
       }
       &-container{

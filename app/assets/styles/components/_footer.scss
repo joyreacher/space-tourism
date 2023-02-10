@@ -1,8 +1,10 @@
 #footer{
   flex-shrink:0;
   align-self: flex-end;
+  position: relative;
+  z-index: 3;
 }
 .footer{
-  margin: 0 2.438em;
-  font-size: .7rem;
+  margin: -2em 2.438em 0 2.438em;
+  font-size: 1.3rem;
 }
