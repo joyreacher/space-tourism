@@ -41,11 +41,17 @@ class ContentSwitch{
     })
   }
   handleActiveDestionation(){
+    this.items.forEach((item, i) => {
+      // this.markers[i].classList.remove(`page__${this.page}--marker-active`)
+      // Crew page menu animation
+      if(this.page === 'crew')gsap.to(this.markers[i], {clearProps: 'all', opacity:.17})
       item.classList.remove(`page__${this.page}--pagination-number--active`)
       const destinationIndex = Number(item.getAttribute(`${this.page}-index`))
       if(destinationIndex == this.currentDestination){
         item.classList.add(`page__${this.page}--pagination-number--active`)
-        this.markers[i].classList.add(`page__${this.page}--marker-active`)
+        // this.markers[i].classList.add(`page__${this.page}--marker-active`)
+        // Crew page menu animation
+        if(this.page === 'crew')gsap.fromTo(this.markers[i], .75,{opacity:.45, ease:'power2.out'},{opacity:1})
       }
     })
   }
@@ -65,6 +71,7 @@ class ContentSwitch{
 
   setCurrentDestination(destination){
     this.getAnimationElements()
+    if(this.page === 'destination')this.menuAnimation(destination)
     this.currentDestination = destination
     this.handleActiveDestionation()
     const prevRange = (destination - 1) * this.pagenationLimit
