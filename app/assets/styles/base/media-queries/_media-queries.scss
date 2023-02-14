@@ -8,8 +8,18 @@
     @mixin-content;
   }
 }
+@define-mixin largeScreensMaxWidth1285{
+  @media (max-width: 1285px){
+    @mixin-content;
+  }
+}
 @define-mixin largeScreensMaxWidth1280{
   @media (max-width: 1280px){
+    @mixin-content;
+  }
+}
+@define-mixin largeScreensMaxWidth1240{
+  @media (max-width: 1240px){
     @mixin-content;
   }
 }
@@ -25,6 +35,11 @@
 }
 @define-mixin mediumScreensMaxWidth890{
   @media (max-width: 890px){
+    @mixin-content;
+  }
+}
+@define-mixin mediumScreensMaxWidth905{
+  @media (max-width: 905px){
     @mixin-content;
   }
 }

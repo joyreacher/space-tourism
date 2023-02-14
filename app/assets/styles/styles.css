@@ -1,6 +1,8 @@
 @import "normalize.css";
 /* Base */
-@import './base/_media-queries.scss';
+@import './base/media-queries/_media-queries.scss';
+@import './base/media-queries/_portraitRules.scss';
+@import './base/media-queries/_landscapeRules.scss';
 @import "./base/_global.scss";
 /* Utilities */
 @import './utilities/_overflow.scss';

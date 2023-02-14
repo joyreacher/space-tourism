@@ -1,0 +1,10 @@
+@define-mixin mediumScreensPortraitMaxWidth768{
+  @media screen and (orientation: portrait) and (max-width: 768px){
+    @mixin-content;
+  }
+}
+@define-mixin mediumScreensPortraitMinWidth768{
+  @media screen and (orientation: portrait) and (min-width: 768px) and (max-width: 1100px){
+    @mixin-content;
+  }
+}
