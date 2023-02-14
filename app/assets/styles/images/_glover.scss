@@ -1,0 +1,12 @@
+#glover{
+  margin: 14em 0 0 11.5em;
+  @mixin mediumScreensPortraitMaxWidth768{
+    margin: 14em 0 0 0;
+  }
+  @mixin smallScreensMaxWidth565{
+    margin:3em 0 0 0;
+  }
+  @mixin mediumScreensLandscapeMinWidth320{
+    margin:3em 0 0 0;
+  }
+}

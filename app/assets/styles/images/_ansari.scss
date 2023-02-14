@@ -1,0 +1,13 @@
+#ansari{
+  margin: 20.95em 0 0 5.5em;
+  
+  @mixin mediumScreensLandscapeMinWidth768{
+    margin: 10.95em 0 0 6em;
+  }
+  @mixin smallScreensMaxWidth565{
+    margin:3em 0 0 0;
+  }
+  @mixin mediumScreensLandscapeMinWidth320{
+    margin:3em 0 0 0;
+  }
+}
