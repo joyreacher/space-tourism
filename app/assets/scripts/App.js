@@ -11,6 +11,7 @@ import ActiveNav from './modules/ActiveNav'
 import DestinationContent from './modules/DestinationContent'
 import ContentSwitch from './modules/ContentSwitch'
 import CrewContent from './modules/CrewContent'
+import TechContent from './modules/TechContent'
 
 barba.init({
   transitions: [{
@@ -80,6 +81,8 @@ barba.init({
         new ActiveNav().leave(data.current.namespace, data.next.namespace)
       },
       afterEnter(data) {
+        ReactDOM.render(<TechContent />, document.querySelector('#tech-content-container'))
+        new ContentSwitch(data.next.namespace)
         ReactDOM.render(<Header active={data.next.namespace}/>, document.querySelector('#header'))
         new MobileMenu()
         new ActiveNav().enter(data.current.namespace, data.next.namespace)
