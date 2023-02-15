@@ -260,6 +260,10 @@
       @mixin mediumScreensMaxWidth768{
         font-size: 1.6rem;
       }
+      @mixin smallScreensMaxWidth565{
+        font-size: 2rem;
+        font-weight:400;
+      }
       
       &-distance, &-travel{
         font-size: 1.4rem;
@@ -277,6 +281,10 @@
         }
         @mixin mediumScreensMaxWidth768{
           font-size: 1.6rem;
+        }
+        @mixin smallScreensMaxWidth565{
+          font-size: 2rem;
+          font-weight:400;
         }
       }
       &-container{
