@@ -1,11 +1,60 @@
 #crew-content-container{
   max-width: 100%;
+  max-height:90vh;
+  overflow:hidden;
+  @mixin mediumScreensLandscapeMinWidth768{
+    overflow: initial;
+  }
+  @mixin mediumScreensLandscapeMinWidth320{
+    
+    overflow:initial;
+  }
 }
 .page{
   &__crew-container{
-    &--outer{}
+    &--outer{
+      @mixin largeScreensLandscapeMinHeight1600{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+      @mixin largeScreensMaxWidth1440{
+        display:flex;
+        height:100vh;
+        max-width: 100vw;
+        overflow: hidden;
+      }
+      
+      @mixin mediumScreensLandscapeMinWidth320{
+        overflow:initial;
+      }
+    }
     &--inner{
       padding: 0 11em 0 13.5em;
+      @mixin largeScreensMaxWidth1440{
+        align-self: flex-end;
+      }
+      @mixin largeScreensMaxWidth1280{
+        height: 89vh;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      @mixin largeScreensMaxWidth1240{
+        overflow: hidden;
+      }
+      @mixin mediumScreensMaxWidth768{
+        padding: 0 3.5em 0 3.5em;
+      }
+      @mixin smallScreensMaxWidth565{
+        height:100%;
+        overflow-y:'visible';
+      }
+      @mixin mediumScreensLandscapeMinWidth320{
+        width:100%;
+        overflow:initial;
+        height: auto;
+      }
     }
   }
   &__crew{
@@ -14,7 +63,13 @@
     &--section-2{
       width: 100%;
       display: flex;
-      justify-content: flex-start;
+      justify-content: center;
+      @mixin largeScreensMaxWidth1440{
+        justify-content: flex-start;
+      }
+      @mixin mediumScreensMaxWidth768{
+        justify-content: center;
+      }
     }
     &--content{
       
@@ -25,6 +80,34 @@
         display:flex;
         align-items: center;
         justify-content: space-between;
+        min-width: 1300px;
+        @mixin largeScreensMinH956MinW1702{
+          position:relative;
+        }
+        @mixin largeScreensLandscapeMinHeight1000{
+          position:relative;
+        }
+        @mixin largeScreensMaxWidth1440{
+          min-width:auto;
+        }
+        @mixin mediumScreensMaxWidth768{
+          flex-direction: column;
+        }
+        @mixin mediumScreensLandscapeMinWidth768{
+          position:relative;
+        }
+        @mixin mediumScreensPortraitMaxWidth768{
+          flex-direction: column-reverse;
+        }
+        @mixin smallScreensMaxWidth565{
+          max-width:100vw;
+          
+        }
+        @mixin mediumScreensLandscapeMinWidth320{
+          flex-direction: column-reverse;
+          min-height: none;
+          max-height:none;
+        }
       }
     }
     &--title{
@@ -32,38 +115,71 @@
       line-height: 3.2rem;
       letter-spacing: 4.725px;
       font-size: 2.8rem;
+      font-weight: 400;
+      @mixin smallScreensMaxWidth565{
+        font-size: 1.6rem;
+        letter-spacing: 2.7px;
+      }
       &-container{
         display:flex;
         align-items: center;
+        @mixin smallScreensMaxWidth565{
+          justify-content: center;
+        }
       }
       &-number{
         font-family: 'Barlow Condensed';
         letter-spacing: 4.725px;
         font-size: 2.8rem;
         opacity:.25;
+        margin-right:1.2em;
+        @mixin smallScreensMaxWidth565{
+          font-size: 1.6rem;
+          margin-right:1em;
+        }
       }
       &-title{
         
       }
     }
-    &--image{
-      position:relative;
-      bottom:0;
-    }
     &--main{
       margin:0 5em 0 0;
-      min-width: 610px;
-      height: 406px;
+      min-width: 645px;
+
       display:flex;
       flex-direction: column;
       justify-content: space-between;
+      @mixin largeScreensMaxWidth1280{
+        margin: 0;
+      }
+      @mixin mediumScreensMaxWidth768{
+        text-align: center;
+        justify-content: flex-start;
+        height:auto;
+        min-height:36.4rem;
+      }
+      @mixin mediumScreensLandscapeMinWidth768{
+        margin-bottom:16em;
+      }
     }
     &--menu{
       display:flex;
       justify-content: flex-start;
       list-style-type: none;
       &-container{
-        
+        @mixin mediumScreensMaxWidth768{
+          display:flex;
+          align-self: center;
+          margin-top: 1em;
+        }
+        @mixin smallScreensMaxWidth565{
+          order: 1;
+          margin:4em 1em;
+        }
+        @mixin mediumScreensLandscapeMinWidth320{
+          margin:3em 0 3em 0;
+          order: 1;
+        }
       }
     }
     &--marker{
@@ -78,8 +194,11 @@
         opacity:.45;
         transition: all .15s ease-in;
       }
+      @mixin smallScreensMaxWidth565{
+        width: 1.5rem;
+        min-height: 1.5rem;
+      }
       &-active{
-
         &:hover{
           opacity: 1;
         }
@@ -93,6 +212,9 @@
       letter-spacing: 2.7px;
       margin: 0 2.3em 0 0;
       cursor: pointer;
+      @mixin smallScreensMaxWidth565{
+        margin:0 1.3em 0 0;
+      }
       &-active{
         display:block;
       }
@@ -102,11 +224,35 @@
         font-family: 'Bellefair';
         font-size: 3.2rem;
         opacity:.5;
+        margin:0;
+        @mixin mediumScreensMaxWidth768{
+          font-size: 2.4rem;
+        }
+        @mixin smallScreensMaxWidth565{
+          margin:0 auto;
+          order:2;
+          font-weight: 400;
+          font-size: 1.6rem;
+        }
+        @mixin mediumScreensLandscapeMinWidth320{
+          order:2;
+        }
       }
       &-name{
         font-size: 5.6rem;
         margin:.5em 0 .5em 0;
         word-break: keep-all;
+        @mixin largeScreensMaxWidth1285{
+          font-size:4.0rem;
+        }
+        @mixin smallScreensMaxWidth565{
+          order: 3;
+          font-size: 2.4rem;
+          font-weight: 400;
+        }
+        @mixin mediumScreensLandscapeMinWidth320{
+          order:3;
+        }
       }
       &-bio{
         font-family: 'Barlow Regular';
@@ -115,20 +261,172 @@
         line-height: 3.2rem;
         max-width: 444px;
         min-height: 16rem;
+        @mixin mediumScreensMaxWidth768{
+          max-width: none;
+          margin:0 auto;
+          width: 45.8rem;
+        }
+        @mixin mediumScreensLandscapeMinWidth768{
+          margin: 0 0 1.5em 0;
+        }
+        @mixin smallScreensMaxWidth565{
+          font-size: 1.5rem;
+          max-width: 32.7rem;
+          order:4;
+          line-height:24px;
+          min-height: 16rem;
+        }
+        @mixin mediumScreensLandscapeMinWidth320{
+          order:4;
+        }
       }
     }
-    
+    &--image{
+      position:relative;
+      z-index: -1;
+      transform: scale(1);
+      max-height:585px;
+      @mixin largeScreensLandscapeMinH1600MinW2560{
+        transform: scale(1.25);
+      }
+      @mixin largeScreensMaxWidth1702{
+        left:-5em;
+        transform-origin: bottom left;
+        transform: scale(.9);
+      }
+      @mixin largeScreensMaxWidth1280{
+        left:-20em;
+        transform-origin: bottom left;
+        transform: scale(.9);
+      }
+      @mixin largeScreensMaxWidth1044{
+        transform: scale(.7);
+        left:-30em;
+      }
+      @mixin mediumScreensMaxWidth905{
+        left:-50em;
+      }
+      @mixin mediumScreensMaxWidth768{
+        transform: scale(1);
+        left:0;
+      }
+      @mixin mediumScreensPortraitMaxWidth768{
+        max-height:30vh;
+      }
+      
+      @mixin mediumScreensLandscapeMinWidth768{
+        top:-9em;
+      }
+      @mixin smallScreensMaxWidth565{
+        max-height: 22.3rem;
+      }
+      @mixin mediumScreensLandscapeMinWidth320{
+        max-height: 22.3rem;
+      }
+    }
+    &--line{
+      width: 300px;
+      height:1.4px;
+      stroke: white;
+      opacity: .5;
+      display:none;
+      @mixin largeScreensMinH956MinW1702{
+        display:block;
+        position:absolute;
+        bottom:0;
+        right:26em;
+      }
+      @mixin largeScreensLandscapeMinH1600MinW2560{
+        width: 400px;
+        right:22em;
+        bottom:-15em;
+      }
+      @mixin mediumScreensMaxWidth768{
+        width: 200px;
+        height:1.4px;
+        stroke: white;
+        opacity: .5;
+        display:block;
+      }
+      
+      @mixin mediumScreensLandscapeMinWidth768{
+        width: 300px;
+        position: absolute;
+        display:block;
+        z-index: 4;
+        bottom:9em;
+        right:13em;
+      }
+      &-hurley{
+        margin: 5.25em 0 0 5.5em;
+        @mixin mediumScreensMaxWidth768{
+          margin: 0 0 0 5.5em;
+        }
+        @mixin mediumScreensPortraitMaxWidth768{
+          margin:0;
+        }
+        @mixin mediumScreensLandscapeMinWidth768{
+          margin:0 0 2em 13em;
+        }
+        @mixin smallScreensMaxWidth565{
+          margin: .25em 0 0 0;
+        }
+        @mixin mediumScreensLandscapeMinWidth320{
+          flex-direction: column-reverse;
+        }
+      }
+      &-shuttleworth{
+
+        margin: 14.8em 0 0 5.5em;
+        
+        @mixin mediumScreensPortraitMaxWidth768{
+          margin: .25em 0 0 0;
+        }
+        @mixin smallScreensMaxWidth565{
+          margin:.25em 0 0 0;
+        }
+        @mixin mediumScreensLandscapeMinWidth320{
+          margin:.25em 0 0 0;
+        }
+
+      }
+      &-glover{
+        margin: 14em 0 0 11.5em;
+        @mixin largeScreensMinH956MinW1702{
+          width:500px;
+        }
+        @mixin mediumScreensLandscapeMinWidth768{
+          width: 500px;
+          right:-10em;
+        }
+        @mixin mediumScreensPortraitMaxWidth768{
+          margin: .25em 0 0 0;
+        }
+        @mixin smallScreensMaxWidth565{
+          margin:.25em 0 0 0;
+        }
+        @mixin mediumScreensLandscapeMinWidth320{
+          margin:.25em 0 0 0;
+        }
+
+      }
+      &-ansari{
+        margin: .25em 0 0 5.5em;
+        @mixin largeScreensMinH956MinW1702{
+          width: 600px;
+        }
+        @mixin mediumScreensLandscapeMinWidth768{
+          width: 500px;
+          right:-12em;
+          margin: 10.95em 0 0 6em;
+        }
+        @mixin smallScreensMaxWidth565{
+          margin:.25em 0 0 0;
+        }
+        @mixin mediumScreensLandscapeMinWidth320{
+          margin:.25em 0 0 0;
+        }
+      }
+    }
   }
-}
-#hurley{
-  margin: 5.25em 0 0 5.5em;
-}
-#shuttleworth{
-  margin: 14.8em 0 0 5.5em;
-} 
-#glover{
-  margin: 14em 0 0 11.5em;
-}
-#ansari{
-  margin: 20.95em 0 0 5.5em;
 }

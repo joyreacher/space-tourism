@@ -1,3 +1,13 @@
+@define-mixin largeScreensMinH956MinW1702{
+  @media (min-height: 956px) and (min-width: 1702px) {
+    @mixin-content;
+  }
+}
+@define-mixin largeScreensMaxWidth1702{
+  @media (max-width: 1702px){
+    @mixin-content;
+  }
+}
 @define-mixin largeScreensMaxWidth1440{
   @media (max-width: 1440px){
     @mixin-content;

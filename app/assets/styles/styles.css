@@ -13,11 +13,6 @@
 @import "./pages/_crew.scss";
 @import "./pages/_technology.scss";
 
-/* Image specific styles for crew page */
-@import "./images/_hurley.scss";
-@import "./images/_shuttleworth.scss";
-@import "./images/_glover.scss";
-@import "./images/_ansari.scss";
 /* Components */
 @import './components/_background-image.scss';
 @import "./components/_header.scss";
