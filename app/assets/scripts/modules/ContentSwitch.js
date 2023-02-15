@@ -35,7 +35,6 @@ class ContentSwitch{
       const destinationIndex = Number(item.getAttribute(`${this.page}-index`))
       if(destinationIndex){
         item.addEventListener('click', () => {
-          // gsap.fromTo(this.elementsToAnimate, {autoAlpha:1, opacity:1, visibility:'visible'},{clearProps:'opacity, visibility', visibility:'hidden',autoAlpha:0,ease: 'power2.inOut', stagger:.009,opacity:0, onComplete:() => this.setCurrentDestination(destinationIndex)})
           gsap.to(this.elementsToAnimate, {clearProps:'opacity, visibility', visibility:'hidden',autoAlpha:0,ease: 'power2.inOut', stagger:.009,opacity:0, onComplete:() => this.setCurrentDestination(destinationIndex)})
         })
       }
@@ -43,14 +42,12 @@ class ContentSwitch{
   }
   handleActiveDestionation(){
     this.items.forEach((item, i) => {
-      // this.markers[i].classList.remove(`page__${this.page}--marker-active`)
       // Crew page menu animation
       if(this.page === 'crew')gsap.to(this.markers[i], {clearProps: 'all', opacity:.17})
       item.classList.remove(`page__${this.page}--pagination-number--active`)
       const destinationIndex = Number(item.getAttribute(`${this.page}-index`))
       if(destinationIndex == this.currentDestination){
         item.classList.add(`page__${this.page}--pagination-number--active`)
-        // this.markers[i].classList.add(`page__${this.page}--marker-active`)
         // Crew page menu animation
         if(this.page === 'crew')gsap.fromTo(this.markers[i], .75,{opacity:.45, ease:'power2.out'},{opacity:1})
       }
