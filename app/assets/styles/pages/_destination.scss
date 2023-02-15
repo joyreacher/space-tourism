@@ -233,7 +233,9 @@
     }
     &--image{
       margin: 0 27em 0 0;
-      
+      @mixin largeScreensMaxWidth1440{
+        align-self: center;
+      }
       @mixin largeScreensMaxWidth1280{
         margin:0 11em 0 0;
       }
