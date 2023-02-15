@@ -123,7 +123,7 @@
       &-active{
         display:flex;
         margin-top: 10vh;
-        align-items: flex-end;
+        align-items: center;
         justify-content: space-between;
         @mixin largeScreensMaxWidth1186{
           flex-direction: column;
