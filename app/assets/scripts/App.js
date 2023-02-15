@@ -23,7 +23,7 @@ barba.init({
       return gsap.to(data.current.container, .25,{autoAlpha:0, opacity: 0, display:'none', ease: "power2.in"});
     },
     enter(data) {
-      return gsap.from(data.next.container, .25, {autoAlpha:0, opacity: 0, ease: 'power2.in'});
+      return gsap.fromTo(data.next.container, .25, {autoAlpha:0, visibility:'hidden', opacity: 0, ease: 'power2.in'}, {autoAlpha:1, visibility:'visible', opacity: 1, ease: 'power2.in'});
     },
     afterEnter(){
       gsap.set('body', {overflow:'auto'})
