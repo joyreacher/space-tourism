@@ -1,0 +1,59 @@
+.page{
+  &__technology-container{
+    &--outer{}
+    &--inner{
+      padding: 0 13.5em 0 13.5em;
+    }
+  }
+  &__technology{
+    &--section-1{
+    }
+    &--section-2{}
+    &--content{
+      
+      &-hidden{
+        display:none;
+      }
+      &-active{
+        display:flex;
+        align-items: center;
+      }
+    }
+    &--title{
+      &-container{
+        
+      }
+      &-number{
+        
+      }
+      &-title{
+        
+      }
+    }
+    &--main{
+      display:flex;
+    }
+    &--menu{
+      display:flex;
+      flex-direction: column;
+      justify-content: space-between;
+      list-style-type: none;
+    }
+    &--marker{
+      display:block;
+      background-color: white;
+      border-radius: 100% 100%;
+      min-height: 2em;
+      width: 2em;
+    }
+    &--pagination-number{
+      width:2em;
+      font-family: 'Barlow Condensed';
+      font-size: 1.2rem;
+      letter-spacing: 2.7px;
+      &--active{
+        display:block;
+      }
+    }
+  }
+}

@@ -61,7 +61,7 @@ const Header = ({ active }) => {
                 </li>
                 <li className='header__mobile-nav-item'>
                   <span className='header__nav-item-order'>01</span> 
-                  <a href='destination-moon.html' className='header__nav-item-text'>DESTINATION</a>
+                  <a href='destination.html' className='header__nav-item-text'>DESTINATION</a>
                   <span className={`${active == 'destination' ? 'header__nav-item-marker--active' : ''} header__nav-item-marker`}></span>
                 </li>
                 <li className='header__mobile-nav-item'>

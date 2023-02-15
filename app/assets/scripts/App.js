@@ -10,7 +10,8 @@ import MobileMenu from './modules/MobileMenu';
 import ActiveNav from './modules/ActiveNav'
 import DestinationContent from './modules/DestinationContent'
 import ContentSwitch from './modules/ContentSwitch'
-
+import CrewContent from './modules/CrewContent'
+import TechContent from './modules/TechContent'
 
 barba.init({
   transitions: [{
@@ -23,7 +24,7 @@ barba.init({
       return gsap.to(data.current.container, .25,{autoAlpha:0, opacity: 0, display:'none', ease: "power2.in"});
     },
     enter(data) {
-      return gsap.from(data.next.container, .25, {autoAlpha:0, opacity: 0, ease: 'power2.in'});
+      return gsap.fromTo(data.next.container, .25, {autoAlpha:0, visibility:'hidden', opacity: 0, ease: 'power2.in'}, {autoAlpha:1, visibility:'visible', opacity: 1, ease: 'power2.in'});
     },
     afterEnter(){
       gsap.set('body', {overflow:'auto'})
@@ -66,6 +67,8 @@ barba.init({
         new ActiveNav().leave(data.current.namespace, data.next.namespace)
       },
       afterEnter(data) {
+        ReactDOM.render(<CrewContent />, document.querySelector('#crew-content-container'))
+        new ContentSwitch(data.next.namespace)
         ReactDOM.render(<Header active={data.next.namespace}/>, document.querySelector('#header'))
         new MobileMenu()
         new ActiveNav().enter(data.current.namespace, data.next.namespace)
@@ -78,6 +81,8 @@ barba.init({
         new ActiveNav().leave(data.current.namespace, data.next.namespace)
       },
       afterEnter(data) {
+        ReactDOM.render(<TechContent />, document.querySelector('#tech-content-container'))
+        new ContentSwitch(data.next.namespace)
         ReactDOM.render(<Header active={data.next.namespace}/>, document.querySelector('#header'))
         new MobileMenu()
         new ActiveNav().enter(data.current.namespace, data.next.namespace)
