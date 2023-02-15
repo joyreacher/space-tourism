@@ -17,7 +17,8 @@ class ContentSwitch{
         `.page__${this.page}--image`,
         `.page__${this.page}--text-role`,
         `.page__${this.page}--text-name`,
-        `.page__${this.page}--text-bio`
+        `.page__${this.page}--text-bio`,
+        `.page__${this.page}--line`
       ]
     }else if(this.page == 'destination'){
       this.elementsToAnimate = [
