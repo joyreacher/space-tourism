@@ -57,14 +57,17 @@
       display:block;
       background-color: white;
       border-radius: 100% 100%;
-      min-height: 2em;
-      width: 2em;
+      min-height: 8em;
+      width: 8em;
     }
     &--pagination-number{
-      width:2em;
       font-family: 'Barlow Condensed';
       font-size: 1.2rem;
       letter-spacing: 2.7px;
+      
+      &:not(:last-of-type){
+        margin-bottom: 3.2rem;
+      }
       &--active{
         display:block;
       }
