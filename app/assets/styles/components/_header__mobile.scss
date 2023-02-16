@@ -63,9 +63,6 @@
         }
       }
     }
-    @mixin smallScreensMinWidth565{
-      display:none;
-    }
     &-expand-container{
       cursor: pointer;
       height: 3.5em;
