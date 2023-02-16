@@ -49,15 +49,21 @@ class ContentSwitch{
   handleActiveDestionation(){
     this.items.forEach((item, i) => {
       this.clearInlineProps(i)
-      if(this.page === 'crew')gsap.to(this.markers[i], {clearProps: 'all', opacity:.17})
-      item.classList.remove(`page__${this.page}--pagination-number--active`)
+      this.removeActiveClasses(item, `page__${this.page}--pagination-number--active`)
+      this.removeActiveClasses(this.markers[i], `page__${this.page}--marker-active`)
       const destinationIndex = Number(item.getAttribute(`${this.page}-index`))
       if(destinationIndex == this.currentDestination){
-        item.classList.add(`page__${this.page}--pagination-number--active`)
-        // Crew page menu animation
+        this.addActiveClasses(item, `page__${this.page}--pagination-number--active`)
+        this.addActiveClasses(this.markers[i], `page__${this.page}--marker-active`)
         if(this.page === 'crew')gsap.fromTo(this.markers[i], .75,{opacity:.45, ease:'power2.out'},{opacity:1})
       }
     })
+  }
+  addActiveClasses(target, className){
+    return target.classList.add(className)
+  }
+  removeActiveClasses(target, className){
+    return target.classList.remove(className)
   }
   clearInlineProps(index){
     if(this.page === 'crew'){
