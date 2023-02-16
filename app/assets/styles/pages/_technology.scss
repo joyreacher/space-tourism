@@ -20,6 +20,9 @@
   }
   &__technology{
     &--section-1{
+      @mixin mediumScreensMaxWidth890{
+        align-self: flex-start;
+      }
     }
     &--section-2{
       margin:0 0 10.1em 0;
@@ -35,7 +38,7 @@
         justify-content: space-between;
         @mixin mediumScreensMaxWidth890{
           flex-direction: column-reverse;
-          align-items:flex-start;
+          align-items:center;
         }
       }
     }
@@ -143,6 +146,12 @@
       @mixin largeScreensMaxWidth1240{
         transform-origin: 100% 50%;
         transform: scale(.75);
+      }
+      @mixin mediumScreensMaxWidth890{
+        transform-origin: center center;
+        transform: scale(1);
+        margin:10em 0;
+        width:100vw;
       }
     }
   }
