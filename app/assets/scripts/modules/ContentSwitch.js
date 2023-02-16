@@ -55,9 +55,16 @@ class ContentSwitch{
       if(destinationIndex == this.currentDestination){
         this.addActiveClasses(item, `page__${this.page}--pagination-number--active`)
         this.addActiveClasses(this.markers[i], `page__${this.page}--marker-active`)
-        if(this.page === 'crew')gsap.fromTo(this.markers[i], .75,{opacity:.45, ease:'power2.out'},{opacity:1})
+        this.menuAnimation(i)
       }
     })
+  }
+  menuAnimation(index){
+    if(this.page === 'crew'){
+      return gsap.fromTo(this.markers[index], .75,{opacity:.45, ease:'power2.out'},{opacity:1})
+    }else if(this.page === 'technology'){
+      return gsap.fromTo(this.markers[index], {backgroundColor: 'transparent'}, {ease: 'power2.in', backgroundColor: 'white'})
+    }
   }
   addActiveClasses(target, className){
     return target.classList.add(className)
