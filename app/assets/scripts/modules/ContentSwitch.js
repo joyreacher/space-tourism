@@ -28,6 +28,12 @@ class ContentSwitch{
         `.page__${this.page}--text-distance`, 
         `.page__${this.page}--text-travel`
         ]
+    }else if(this.page == 'technology'){
+      this.elementsToAnimate = [
+        `.page__${this.page}--image`,
+        `.page__${this.page}--description`, 
+        `.page__${this.page}--name`
+      ]
     }
   }
   events(){
