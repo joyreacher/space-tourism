@@ -79,6 +79,7 @@ class ContentSwitch{
       return gsap.to(this.markers[index], {clearProps: 'all', ease:'power2.out', backgroundColor: 'transparent'})
     }
   }
+  destinationMenuAnimation(destination){
     if(destination > this.currentDestination){
       return gsap.fromTo(`.page__${this.page}--marker`, {ease:'power2.out',width: '0%'},{ease:'power2.out',cssFloat:'left',width: '100%'})
     }else if(destination < this.currentDestination){
@@ -94,7 +95,7 @@ class ContentSwitch{
 
   setCurrentDestination(destination){
     this.getAnimationElements()
-    if(this.page === 'destination')this.menuAnimation(destination)
+    if(this.page === 'destination')this.destinationMenuAnimation(destination)
     this.currentDestination = destination
     this.handleActiveDestionation()
     const prevRange = (destination - 1) * this.pagenationLimit
