@@ -45,16 +45,15 @@ const Header = ({ active }) => {
                 </li>
               </ul>
             </nav>
-            <div className="header__mobile">
-              {/* menu expander */}
-              <div className='header__mobile-expand-container' >
+            {/* menu expander */}
+            <div className='header__mobile-expand-container' >
                 <span className='header__mobile--top'></span>
                 <span className='header__mobile--mid'></span>
                 <span className='header__mobile--bottom'></span>
               </div>
               {/* nav to show for mobile screens */}
               <nav>
-                <ul className='header__mobile--container'>
+                <ul className='header__mobile'>
                   <li className='header__mobile-nav-item'>
                     <span className='header__nav-item-order'>00</span> 
                     <a href="index.html" className='header__nav-item-text'>HOME</a>
@@ -77,7 +76,6 @@ const Header = ({ active }) => {
                   </li>
                 </ul>
               </nav>
-            </div>
           </section>
         </div>
       </div>
