@@ -27,8 +27,11 @@ function TechContent() {
           </div>
           
         </div>
+        <picture>
+          <source srcSet={`${item.images.landscape} 890w`} media="(max-width:890px)"/>
+          <img className='page__technology--image' srcSet={`${item.images.portrait} 890w`} alt={`Image of crew member ${item.name}`} />
+        </picture>
         
-        <img className='page__technology--image' src={item.images.portrait} alt={`Image of crew member ${item.name}`} />
       </div>
     )
   })
