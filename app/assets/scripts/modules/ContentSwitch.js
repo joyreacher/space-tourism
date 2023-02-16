@@ -89,9 +89,6 @@ class ContentSwitch{
   contentAnimation(){
     return gsap.from(this.elementsToAnimate, {autoAlpha:0,ease: 'power2.inOut', stagger:.009,opacity:0})
   }
-  crewContentAnimation(){
-    return gsap.fromTo(this.elementsToAnimate, {autoAlpha:0,ease: 'power2.inOut', stagger:.009,opacity:0},{autoAlpha:1,ease: 'power2.inOut', stagger:.009,opacity:1})
-  }
 
   setCurrentDestination(destination){
     this.getAnimationElements()
