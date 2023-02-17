@@ -13,11 +13,15 @@
     padding: 12.5em 3.5em;
     z-index: 1;
     display:none;
+    @mixin smallScreensMaxWidth565{
+      display:none;
+    }
+    
     &-nav-item{
       font-family: 'Barlow Condensed';
       list-style-type: none;
       @mixin smallScreensMaxWidth565{
-        margin-top: 2.5em;
+        margin-top: 3.2rem;
       }
       &-order{
         font-family: 'Barlow Bold';
@@ -35,7 +39,7 @@
         text-decoration: none;
         margin-left:.70em;
         display:inline;
-        font-size: 1.1rem;
+        font-size: 1.6rem;
         letter-spacing: 2.7px;
         @mixin mediumScreensMaxWidth768{
           margin-left:0;
@@ -56,21 +60,18 @@
         }
       }
     }
-    @mixin smallScreensMinWidth565{
-      display:none;
-    }
     &-expand-container{
       cursor: pointer;
       height: 3.5em;
-      display:flex;
+      display:none;
       flex-direction: column;
       justify-content: space-around;
       align-items: flex-end;
       position: relative;
       z-index: 2;
       margin: 0 3.438em 0 0;
-      @mixin smallScreensMinWidth565{
-        display:none;
+      @mixin smallScreensMaxWidth565{
+        display:flex;
       }
     }
     &--top,&--mid,&--bottom{

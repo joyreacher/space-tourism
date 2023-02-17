@@ -43,6 +43,11 @@
     @mixin-content;
   }
 }
+@define-mixin mediumScreensMaxWidth1017{
+  @media (max-width: 1017px){
+    @mixin-content;
+  }
+}
 @define-mixin mediumScreensMaxWidth890{
   @media (max-width: 890px){
     @mixin-content;
@@ -75,7 +80,16 @@
     @mixin-content;
   }
 }
-
+@define-mixin smallScreensMinW375MaxW565{
+  @media (min-width: 375px) and (max-width:565px){
+    @mixin-content;
+  }
+}
+@define-mixin smallScreensMaxWidth375{
+  @media (max-width: 375px){
+    @mixin-content;
+  }
+}
 
 
 

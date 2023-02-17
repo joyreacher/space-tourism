@@ -23,10 +23,12 @@ function CrewContent() {
             </ul>
           </div>
         </div>
-        <svg version="1.1" className={`page__crew--line page__crew--line-${name[1].toLocaleLowerCase()}`}  x="0px" y="0px"  >
-          <path className="path2"  strokeWidth="2.3" d="M0 0 l1120 0" />
-        </svg>
-        <img className={`page__crew--image`} id={name[1].toLocaleLowerCase()} src={`assets/images/crew/image-${name[0].toLocaleLowerCase()}-${name[1].toLocaleLowerCase()}.webp`} alt={`Image of crew member ${item.name}`} />
+        <div className='page__crew--image-container'>
+          <svg version="1.1" className={`page__crew--line page__crew--line-${name[1].toLocaleLowerCase()}`} x="0px" y="0px"  >
+            <path className="path2" strokeWidth="2.3" d="M0 0 l1120 0" />
+          </svg>
+          <img className={`page__crew--image page__crew--image-${name[1].toLocaleLowerCase()}`} id={name[1].toLocaleLowerCase()} src={`assets/images/crew/image-${name[0].toLocaleLowerCase()}-${name[1].toLocaleLowerCase()}.webp`} alt={`Image of crew member ${item.name}`} />
+        </div>
       </div>
     )
   })

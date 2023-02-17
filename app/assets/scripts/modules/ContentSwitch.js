@@ -28,6 +28,12 @@ class ContentSwitch{
         `.page__${this.page}--text-distance`, 
         `.page__${this.page}--text-travel`
         ]
+    }else if(this.page == 'technology'){
+      this.elementsToAnimate = [
+        `.page__${this.page}--image`,
+        `.page__${this.page}--description`, 
+        `.page__${this.page}--name`
+      ]
     }
   }
   events(){
@@ -35,7 +41,6 @@ class ContentSwitch{
       const destinationIndex = Number(item.getAttribute(`${this.page}-index`))
       if(destinationIndex){
         item.addEventListener('click', () => {
-          // gsap.fromTo(this.elementsToAnimate, {autoAlpha:1, opacity:1, visibility:'visible'},{clearProps:'opacity, visibility', visibility:'hidden',autoAlpha:0,ease: 'power2.inOut', stagger:.009,opacity:0, onComplete:() => this.setCurrentDestination(destinationIndex)})
           gsap.to(this.elementsToAnimate, {clearProps:'opacity, visibility', visibility:'hidden',autoAlpha:0,ease: 'power2.inOut', stagger:.009,opacity:0, onComplete:() => this.setCurrentDestination(destinationIndex)})
         })
       }
@@ -43,20 +48,38 @@ class ContentSwitch{
   }
   handleActiveDestionation(){
     this.items.forEach((item, i) => {
-      // this.markers[i].classList.remove(`page__${this.page}--marker-active`)
-      // Crew page menu animation
-      if(this.page === 'crew')gsap.to(this.markers[i], {clearProps: 'all', opacity:.17})
-      item.classList.remove(`page__${this.page}--pagination-number--active`)
+      this.clearInlineProps(i)
+      this.removeActiveClasses(item, `page__${this.page}--pagination-number--active`)
+      this.removeActiveClasses(this.markers[i], `page__${this.page}--marker-active`)
       const destinationIndex = Number(item.getAttribute(`${this.page}-index`))
       if(destinationIndex == this.currentDestination){
-        item.classList.add(`page__${this.page}--pagination-number--active`)
-        // this.markers[i].classList.add(`page__${this.page}--marker-active`)
-        // Crew page menu animation
-        if(this.page === 'crew')gsap.fromTo(this.markers[i], .75,{opacity:.45, ease:'power2.out'},{opacity:1})
+        this.addActiveClasses(item, `page__${this.page}--pagination-number--active`)
+        this.addActiveClasses(this.markers[i], `page__${this.page}--marker-active`)
+        this.menuAnimation(i)
       }
     })
   }
-  menuAnimation(destination){
+  menuAnimation(index){
+    if(this.page === 'crew'){
+      return gsap.fromTo(this.markers[index], .75,{opacity:.45, ease:'power2.out'},{opacity:1})
+    }else if(this.page === 'technology'){
+      return gsap.fromTo(this.markers[index], {backgroundColor: 'transparent'}, {ease: 'power2.in', backgroundColor: 'white'})
+    }
+  }
+  addActiveClasses(target, className){
+    return target.classList.add(className)
+  }
+  removeActiveClasses(target, className){
+    return target.classList.remove(className)
+  }
+  clearInlineProps(index){
+    if(this.page === 'crew'){
+      return gsap.to(this.markers[index], {clearProps: 'all', opacity:.17})
+    }else if(this.page === 'technology'){
+      return gsap.to(this.markers[index], {clearProps: 'all', ease:'power2.out', backgroundColor: 'transparent'})
+    }
+  }
+  destinationMenuAnimation(destination){
     if(destination > this.currentDestination){
       return gsap.fromTo(`.page__${this.page}--marker`, {ease:'power2.out',width: '0%'},{ease:'power2.out',cssFloat:'left',width: '100%'})
     }else if(destination < this.currentDestination){
@@ -66,13 +89,10 @@ class ContentSwitch{
   contentAnimation(){
     return gsap.from(this.elementsToAnimate, {autoAlpha:0,ease: 'power2.inOut', stagger:.009,opacity:0})
   }
-  crewContentAnimation(){
-    return gsap.fromTo(this.elementsToAnimate, {autoAlpha:0,ease: 'power2.inOut', stagger:.009,opacity:0},{autoAlpha:1,ease: 'power2.inOut', stagger:.009,opacity:1})
-  }
 
   setCurrentDestination(destination){
     this.getAnimationElements()
-    if(this.page === 'destination')this.menuAnimation(destination)
+    if(this.page === 'destination')this.destinationMenuAnimation(destination)
     this.currentDestination = destination
     this.handleActiveDestionation()
     const prevRange = (destination - 1) * this.pagenationLimit

@@ -7,4 +7,10 @@
 .footer{
   margin: -2em 2.438em 0 2.438em;
   font-size: 1.3rem;
+  @mixin mediumScreensMaxWidth890{
+    margin: -2em 6.438em 0 2.438em;
+  }
+  @mixin smallScreensMaxWidth565{
+    margin: -2em 2.438em 0 2.438em;
+  }
 }

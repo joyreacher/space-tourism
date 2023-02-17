@@ -2,6 +2,10 @@
   &__destination-container{
     &--outer{
       height:100vh;
+      @mixin largeScreensMaxWidth1440{
+        height:89svh;
+        height: 89dvh;
+      }
     }
     &--inner{
     margin-bottom: 7.1em;
