@@ -65,7 +65,7 @@
       @mixin smallScreensMaxWidth565{
         width:124px;
         height:124px;
-        font-size: 1.25rem;
+        font-size: 2rem;
       }
     }
     &-primary{
@@ -74,7 +74,7 @@
       font-size: 15rem;
       margin-bottom:.3em;
       @mixin smallScreensMaxWidth565{
-        font-size: 5rem;
+        font-size: 8rem;
         margin: .34em 0 .45em 0;
       }
     }
@@ -84,9 +84,10 @@
       letter-spacing: 4.72px;
       color: #D0D6F9;
       @mixin smallScreensMaxWidth565{
-        font-size: 1.01rem;
+        font-size: 1.6rem;
         letter-spacing: 2.82px;
       }
+      
     }
     &-copy{
       font-family: 'Barlow Regular';
@@ -94,7 +95,7 @@
       margin-top: -2.3em;
       line-height: 32px;
       @mixin smallScreensMaxWidth565{
-        font-size: .95rem;
+        font-size: 1.5rem;
         margin: 0;
       }
     }
