@@ -6,7 +6,7 @@ function DestinationContent() {
   return data.destinations.map((item) =>{
     return (
       <div className='page__destination--content' key={item.name}>
-        <img className="page__destination--image" src={`assets/images/destination/image-${item.name}.webp`} alt="Moon" />
+        <img className="page__destination--image" src={item.images.webp} alt="Moon" />
         <div className='page__destination--menu-container-outer'>
           <div className="page__destination--menu-container">
             <ul className="page__destination--menu">
