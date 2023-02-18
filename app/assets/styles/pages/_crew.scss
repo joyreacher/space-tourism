@@ -18,7 +18,9 @@
       @mixin mediumScreensMaxWidth768{
         height:100%;
       }
-      
+      @mixin mediumScreensLandscapeMinWidth768MaxHeight428{
+          height:100%;
+      }
     }
     &--inner{
       padding: 0 11em 0 13.5em;
@@ -96,6 +98,12 @@
           min-height:unset;
           flex-direction: column-reverse;
         }
+        @mixin largeScreensLandscapeMinWidth1366{
+          min-height: 710px;
+        }
+        @mixin mediumScreensLandscapeMinWidth768MaxHeight428{
+          position:relative;
+        }
         @mixin mediumScreensLandscapeMinWidth320{
           flex-direction: column-reverse;
           min-height: none;
@@ -142,8 +150,9 @@
       display:flex;
       flex-direction: column;
       justify-content: space-between;
+      margin: 24em 0;
       @mixin largeScreensMaxWidth1440{
-        margin: 24em 0;
+        margin: 24em 0 0 0;
       }
       @mixin mediumScreensMaxWidth768{
         text-align: center;
@@ -159,6 +168,16 @@
       }
       @mixin smallScreensMaxWidth565{
         margin:3.2rem 0 0 0;
+      }
+      @mixin largeScreensLandscapeMinWidth1366{
+        margin:0;
+      }
+      @mixin mediumScreensLandscapeMinWidth768MaxHeight428{
+        margin:5em 0 10em 0;
+        max-height: 282px;
+      }
+      @mixin mediumScreensLandscapeMinWidth320{
+        margin:0;
       }
     }
     &--menu{
@@ -287,7 +306,10 @@
       z-index: -1;
       max-width:100%;
       min-height:656px;
-      
+      @mixin largeScreensMaxWidth1344{
+        min-height:initial;
+        height: 565px;
+      }
       @mixin largeScreensMaxWidth1044{
         transform-origin: bottom right;
         transform: scale(.75);
@@ -299,6 +321,10 @@
         max-height: 572px;
       }
       @mixin smallScreensMaxWidth565{
+        min-height:unset;
+        max-height: 223px;
+      }
+      @mixin mediumScreensLandscapeMinWidth320{
         min-height:unset;
         max-height: 223px;
       }
@@ -321,17 +347,48 @@
           align-items: center;
           margin:7em 0 1em 0;
         }
+        
+        @mixin largeScreensLandscapeMinWidth1366{
+          position:relative;
+          right: 5em;
+        }
+        
+        @mixin mediumScreensLandscapeMinWidth768{
+          align-items: center;
+          right:10em;
+        }
+        @mixin mediumScreensLandscapeMinWidth768MaxHeight428{
+          position:absolute;
+          bottom:0;
+          right:-3em;
+        }
+        @mixin mediumScreensLandscapeMinWidth320{
+          align-items: center;
+        }
       }
       &-hurley{
         
       }
       &-shuttleworth{
+        @mixin mediumScreensLandscapeMinWidth768{
+          position: relative;
+          right: 7em;
+        }
       }
       &-glover{
-
+        @mixin mediumScreensLandscapeMinWidth768{
+          position: relative;
+          right: 7em;
+        }
+        @mixin mediumScreensLandscapeMinWidth768MaxHeight428{
+          right: -2em;
+        }
       }
       &-ansari{
-        
+        @mixin mediumScreensLandscapeMinWidth768MaxHeight428{
+          position:relative;
+          right: -7em;
+        }
       }
     }
     &--line{
@@ -339,8 +396,8 @@
       height:1.4px;
       stroke: white;
       opacity: .5;
-      
-      
+      position: absolute;
+      bottom:-1.5em;
       @mixin largeScreensMaxWidth1440{
         width: 70em;
         z-index:3;
@@ -352,10 +409,73 @@
       
       &-hurley{
         position: relative;
+        bottom:0;
+        @mixin largeScreensMaxWidth1344{
+          width: 50em;
+        }
+        @mixin smallScreensMaxWidth565{
+          width: 30em;
+        }
+        @mixin smallScreensMaxWidth375{
+          width: 20em;
+        }
+        @mixin mediumScreensLandscapeMinWidth768{
+          width: 40em;
+        }
+        @mixin mediumScreensLandscapeMinWidth320{
+          width: 30em;
+        }
       }
-      &-shuttleworth{}
-      &-glover{}
-      &-ansari{}
+      &-shuttleworth{
+        @mixin largeScreensMaxWidth1344{
+          width: 60em;
+        }
+        @mixin smallScreensMaxWidth565{
+          width: 30em;
+        }
+        @mixin smallScreensMaxWidth375{
+          width: 20em;
+        }
+        @mixin mediumScreensLandscapeMinWidth768{
+          width: 55em;
+        }
+        @mixin mediumScreensLandscapeMinWidth320{
+          width: 30em;
+        }
+      }
+      &-glover{
+        @mixin largeScreensLandscapeMinWidth1366{
+          width: 93em;
+        }
+        @mixin mediumScreensLandscapeMinWidth320{
+          width: 40em;
+        }
+        @mixin mediumScreensLandscapeMinWidth768{
+          width: 60em;
+        }
+        
+      }
+      &-ansari{
+        @mixin largeScreensMaxWidth1344{
+          width: 90em;
+        }
+        @mixin smallScreensMaxWidth565{
+          width: 40em;
+        }
+        @mixin smallScreensMaxWidth375{
+          width: 30em;
+        }
+        @mixin largeScreensLandscapeMinWidth1366{
+          width: 90em;
+        }
+        @mixin mediumScreensLandscapeMinWidth768{
+          right:-2em;
+          width: 70em;
+        }
+        @mixin mediumScreensLandscapeMinWidth320{
+          width: 40em;
+        }
+      }
     }
   }
 }
