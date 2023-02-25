@@ -11,8 +11,14 @@
 .page{
   &__crew-container{
     &--outer{
+      height:auto;
       @mixin largeScreensMaxWidth1440{
+        height:auto;
+      }
       @mixin largeScreensLandscapeMinWidth1366MaxHeight1024{
+        min-height: 85svh;
+        min-height: 85dvh;
+        height:auto;
       }
       @mixin mediumScreensMaxWidth768{
         height:100%;
@@ -82,6 +88,9 @@
         @mixin largeScreensMaxWidth1440{
           min-width:auto;
 
+        }
+        @mixin largeScreensMaxWidth1344{
+          overflow: hidden;
         }
         @mixin mediumScreensMaxWidth768{
           flex-direction: column;
@@ -161,6 +170,7 @@
       }
       @mixin mediumScreensLandscape_MinW_768_MaxW_1100{
         margin-bottom:16em;
+        min-width:461px;
       }
       @mixin mediumScreensPortraitMaxWidth768{
         margin:10em 0 0 0;
@@ -304,10 +314,11 @@
     &--image{
       z-index: -1;
       max-width:100%;
-      min-height:656px;
       @mixin largeScreensMaxWidth1344{
         min-height:initial;
-        height: 565px;
+      }
+      @mixin largeScreensMaxWidth1280{
+        height: auto;
       }
       @mixin largeScreensMaxWidth1044{
         transform-origin: bottom right;
@@ -332,7 +343,7 @@
         flex-direction: column-reverse;
         justify-content: flex-end;
         align-items: stretch;
-        position:absolute;
+        
         right:24em;
         bottom:0em;
         @mixin largeScreensMaxWidth1186{
@@ -371,7 +382,9 @@
       &-shuttleworth{
         @mixin mediumScreensLandscape_MinW_768_MaxW_1100{
           position: relative;
-          right: 7em;
+          right:1em;
+          transform-origin: bottom left;
+          transform:scale(.65);
         }
       }
       &-glover{
@@ -385,17 +398,15 @@
       }
       &-ansari{
         @mixin mediumScreensLandscapeMinWidth768MaxHeight428{
-          position:relative;
-          right: -7em;
+          
         }
       }
     }
     &--line{
-      width: 300px;
+      width: 100%;
       height:1.4px;
       stroke: white;
       opacity: .5;
-      position: absolute;
       bottom:-1.5em;
       @mixin largeScreensMaxWidth1440{
         width: 70em;
