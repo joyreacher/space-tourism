@@ -1,7 +1,7 @@
 #crew-content-container{
   width: 100%;
   
-  @mixin mediumScreensLandscapeMinWidth768{
+  @mixin mediumScreensLandscape_MinW_768_MaxW_1100{
     overflow: initial;
   }
   @mixin mediumScreensLandscapeMinWidth320{
@@ -12,8 +12,7 @@
   &__crew-container{
     &--outer{
       @mixin largeScreensMaxWidth1440{
-        height:89svh;
-        height: 89dvh;
+      @mixin largeScreensLandscapeMinWidth1366MaxHeight1024{
       }
       @mixin mediumScreensMaxWidth768{
         height:100%;
@@ -87,7 +86,7 @@
         @mixin mediumScreensMaxWidth768{
           flex-direction: column;
         }
-        @mixin mediumScreensLandscapeMinWidth768{
+        @mixin mediumScreensLandscape_MinW_768_MaxW_1100{
           
         }
         @mixin mediumScreensPortraitMaxWidth768{
@@ -98,7 +97,7 @@
           min-height:unset;
           flex-direction: column-reverse;
         }
-        @mixin largeScreensLandscapeMinWidth1366{
+        @mixin largeScreensLandscape_MinW_1100_MaxW_1366{
           min-height: 710px;
         }
         @mixin mediumScreensLandscapeMinWidth768MaxHeight428{
@@ -160,7 +159,7 @@
         height:auto;
         min-height:36.4rem;
       }
-      @mixin mediumScreensLandscapeMinWidth768{
+      @mixin mediumScreensLandscape_MinW_768_MaxW_1100{
         margin-bottom:16em;
       }
       @mixin mediumScreensPortraitMaxWidth768{
@@ -169,7 +168,7 @@
       @mixin smallScreensMaxWidth565{
         margin:3.2rem 0 0 0;
       }
-      @mixin largeScreensLandscapeMinWidth1366{
+      @mixin largeScreensLandscape_MinW_1100_MaxW_1366{
         margin:0;
       }
       @mixin mediumScreensLandscapeMinWidth768MaxHeight428{
@@ -287,7 +286,7 @@
           margin:0 auto;
           width: 45.8rem;
         }
-        @mixin mediumScreensLandscapeMinWidth768{
+        @mixin mediumScreensLandscape_MinW_768_MaxW_1100{
           margin: 0 0 1.5em 0;
         }
         @mixin smallScreensMaxWidth565{
@@ -348,12 +347,12 @@
           margin:7em 0 1em 0;
         }
         
-        @mixin largeScreensLandscapeMinWidth1366{
+        @mixin largeScreensLandscape_MinW_1100_MaxW_1366{
           position:relative;
           right: 5em;
         }
         
-        @mixin mediumScreensLandscapeMinWidth768{
+        @mixin mediumScreensLandscape_MinW_768_MaxW_1100{
           align-items: center;
           right:10em;
         }
@@ -370,13 +369,13 @@
         
       }
       &-shuttleworth{
-        @mixin mediumScreensLandscapeMinWidth768{
+        @mixin mediumScreensLandscape_MinW_768_MaxW_1100{
           position: relative;
           right: 7em;
         }
       }
       &-glover{
-        @mixin mediumScreensLandscapeMinWidth768{
+        @mixin mediumScreensLandscape_MinW_768_MaxW_1100{
           position: relative;
           right: 7em;
         }
@@ -419,7 +418,7 @@
         @mixin smallScreensMaxWidth375{
           width: 20em;
         }
-        @mixin mediumScreensLandscapeMinWidth768{
+        @mixin mediumScreensLandscape_MinW_768_MaxW_1100{
           width: 40em;
         }
         @mixin mediumScreensLandscapeMinWidth320{
@@ -436,7 +435,7 @@
         @mixin smallScreensMaxWidth375{
           width: 20em;
         }
-        @mixin mediumScreensLandscapeMinWidth768{
+        @mixin mediumScreensLandscape_MinW_768_MaxW_1100{
           width: 55em;
         }
         @mixin mediumScreensLandscapeMinWidth320{
@@ -444,13 +443,13 @@
         }
       }
       &-glover{
-        @mixin largeScreensLandscapeMinWidth1366{
+        @mixin largeScreensLandscape_MinW_1100_MaxW_1366{
           width: 93em;
         }
         @mixin mediumScreensLandscapeMinWidth320{
           width: 40em;
         }
-        @mixin mediumScreensLandscapeMinWidth768{
+        @mixin mediumScreensLandscape_MinW_768_MaxW_1100{
           width: 60em;
         }
         
@@ -465,10 +464,10 @@
         @mixin smallScreensMaxWidth375{
           width: 30em;
         }
-        @mixin largeScreensLandscapeMinWidth1366{
+        @mixin largeScreensLandscape_MinW_1100_MaxW_1366{
           width: 90em;
         }
-        @mixin mediumScreensLandscapeMinWidth768{
+        @mixin mediumScreensLandscape_MinW_768_MaxW_1100{
           right:-2em;
           width: 70em;
         }
