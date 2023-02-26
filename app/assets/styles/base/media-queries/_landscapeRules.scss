@@ -19,13 +19,24 @@
     @mixin-content;
   }
 }
-@define-mixin largeScreensLandscapeMinWidth1366{
+@define-mixin largeScreensLandscapeMinWidth1366MaxHeight1024{
+  @media screen and (orientation: landscape) and (min-width: 1300px) and (max-height: 1024px){
+    @mixin-content;
+  }
+}
+
+@define-mixin largeScreensLandscape_MinW_1100_MaxW_1366{
   @media screen and (orientation: landscape) and (min-width: 1100px) and (max-width: 1366px){
     @mixin-content;
   }
 }
-@define-mixin mediumScreensLandscapeMinWidth768{
+@define-mixin mediumScreensLandscape_MinW_768_MaxW_1100{
   @media screen and (orientation: landscape) and (min-width: 768px) and (max-width: 1100px){
+    @mixin-content;
+  }
+}
+@define-mixin mediumScreensLandscapeMinWidth768MaxHeight428{
+  @media screen and (orientation: landscape) and (min-width: 768px) and (max-width: 1100px) and (max-height: 428px){
     @mixin-content;
   }
 }
