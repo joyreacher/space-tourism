@@ -2,6 +2,9 @@
   &__container{
     &-outer{
       margin: 4em 0;
+      @mixin mediumScreensMaxWidth768{
+        margin:0;
+      }
     }
     &-inner{
       display:flex;
@@ -15,6 +18,9 @@
       align-items: center;
       justify-content: space-between;
       width:100%;
+      @mixin removeDividerLine{
+        justify-content: flex-end;
+      }
       @mixin mediumScreensMaxWidth890{
         justify-content: flex-end;
       }
