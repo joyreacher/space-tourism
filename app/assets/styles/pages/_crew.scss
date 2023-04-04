@@ -405,7 +405,7 @@
       width: 100%;
       height:1.4px;
       stroke: white;
-      opacity: .5;
+      opacity: .15;
       bottom:-1.5em;
       @mixin largeScreensMaxWidth1440{
         width: 70em;
@@ -426,7 +426,8 @@
           width: 30em;
         }
         @mixin smallScreensMaxWidth375{
-          width: 20em;
+          width: 52em;
+          left:-2em;
         }
         @mixin mediumScreensLandscape_MinW_768_MaxW_1100{
           width: 40em;
@@ -443,7 +444,7 @@
           width: 30em;
         }
         @mixin smallScreensMaxWidth375{
-          width: 20em;
+          width: 52em;
         }
         @mixin mediumScreensLandscape_MinW_768_MaxW_1100{
           width: 55em;
@@ -453,6 +454,9 @@
         }
       }
       &-glover{
+        @mixin smallScreensMaxWidth375{
+          width: 52em;
+        }
         @mixin largeScreensLandscape_MinW_1100_MaxW_1366{
           width: 93em;
         }
@@ -472,7 +476,7 @@
           width: 40em;
         }
         @mixin smallScreensMaxWidth375{
-          width: 30em;
+          width: 52em;
         }
         @mixin largeScreensLandscape_MinW_1100_MaxW_1366{
           width: 90em;
