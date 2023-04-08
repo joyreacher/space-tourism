@@ -31,9 +31,9 @@
       padding: 0 11em 0 13.5em;
       @mixin largeScreensMaxWidth1440{
         align-self: flex-end;
+        padding: 0 13.5em;
       }
       @mixin largeScreensMaxWidth1280{
-        
         display:flex;
         flex-direction: column;
         justify-content: space-between;
@@ -129,6 +129,9 @@
         font-size: 1.6rem;
         letter-spacing: 2.7px;
       }
+      @mixin mediumScreensMaxWidth768{
+        font-size: 2rem;
+      }
       &-container{
         display:flex;
         align-items: center;
@@ -146,6 +149,9 @@
           font-size: 1.6rem;
           margin-right:1em;
         }
+        @mixin mediumScreensMaxWidth768{
+          font-size: 2rem;
+        }
       }
       &-title{
         
@@ -153,7 +159,6 @@
     }
     &--main{
       margin:0;
-      min-width: 645px;
       min-height: 387px;
       display:flex;
       flex-direction: column;
@@ -176,7 +181,8 @@
         margin:10em 0 0 0;
       }
       @mixin smallScreensMaxWidth565{
-        margin:3.2rem 0 0 0;
+        margin:.2rem 0 5rem 0;
+        min-height:auto;
       }
       @mixin largeScreensLandscape_MinW_1100_MaxW_1366{
         margin:0;
@@ -209,6 +215,9 @@
         @mixin smallScreensMaxWidth565{
           order: 1;
           margin:4em 1em;
+        }
+        @mixin smallScreensMaxWidth375{
+          margin:1em 0 4em 0;
         }
       }
     }
@@ -305,6 +314,9 @@
           order:4;
           line-height:24px;
           min-height: 16rem;
+        }
+        @mixin smallScreensMaxWidth375{
+          min-height:auto;
         }
         @mixin mediumScreensLandscapeMinWidth320{
           order:4;
@@ -406,7 +418,7 @@
       width: 100%;
       height:1.4px;
       stroke: white;
-      opacity: .5;
+      opacity: .15;
       bottom:-1.5em;
       @mixin largeScreensMaxWidth1440{
         width: 70em;
@@ -427,7 +439,8 @@
           width: 30em;
         }
         @mixin smallScreensMaxWidth375{
-          width: 20em;
+          width: 52em;
+          left:-2em;
         }
         @mixin mediumScreensLandscape_MinW_768_MaxW_1100{
           width: 40em;
@@ -444,7 +457,7 @@
           width: 30em;
         }
         @mixin smallScreensMaxWidth375{
-          width: 20em;
+          width: 52em;
         }
         @mixin mediumScreensLandscape_MinW_768_MaxW_1100{
           width: 55em;
@@ -454,6 +467,9 @@
         }
       }
       &-glover{
+        @mixin smallScreensMaxWidth375{
+          width: 52em;
+        }
         @mixin largeScreensLandscape_MinW_1100_MaxW_1366{
           width: 93em;
         }
@@ -473,7 +489,7 @@
           width: 40em;
         }
         @mixin smallScreensMaxWidth375{
-          width: 30em;
+          width: 52em;
         }
         @mixin largeScreensLandscape_MinW_1100_MaxW_1366{
           width: 90em;
