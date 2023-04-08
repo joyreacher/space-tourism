@@ -24,7 +24,7 @@
     @mixin smallScreensMaxWidth565{
       justify-content: flex-start;
       padding: 1.8em 3.438em 6em 3.438em;
-      min-height: auto;
+      min-height: 94vh;
     }
     &--inner{
       display:flex;
