@@ -20,6 +20,7 @@ class MobileMenu{
   }
   modalAnimation() {
     this.toggleAnimation
+    .fromTo(['body', 'html', '[data-barba=container]'], {overflow: 'initial'},{overflow: 'hidden'})
     .fromTo(this.modal,  {autoAlpha: 0, visibility: 'hidden', display:'none',opacity:0},{autoAlpha: 1, visibility: 'visible', display:'flex',opacity:1}, '<')
     .fromTo(this.modal, .25,{ease: 'power2.in', x:'100%'}, {x:0, ease: 'power2.in'}, '<')
     .fromTo(this.modal, .85,{backdropFilter:"blur(0rem)", ease: 'power2.in'}, {backdropFilter:"blur(1.4rem)", ease: 'power2.inOut'}, '<');
