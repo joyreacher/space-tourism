@@ -5,9 +5,10 @@
     display:flex;
     align-items: center;
     justify-content: space-around;
+    min-height: 90vh;
     @mixin largeScreensMaxWidth1440{
       justify-content: space-between;
-      min-height: 75vh;
+      max-height: 75vh;
     }
     @mixin largeScreensMaxWidth1044{
       padding: 4em 13.5em;
