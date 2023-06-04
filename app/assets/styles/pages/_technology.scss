@@ -4,23 +4,16 @@
       @mixin mediumScreensMaxWidth890{
         margin-bottom: 12em;
       }
-      @mixin smallScreensMaxWidth565{
-        height:100vh;
-      }
       @mixin smallScreensMaxWidth375{
         margin-bottom:5em;
       }
     }
     &--inner{
       padding: 0 0 0 13.5em;
-      height:100%;
       display:flex;
       flex-direction: column;
       justify-content: space-between;
-      @mixin largeScreensMaxWidth1440{
-        padding: 0 0 0 3.438em;
-      }
-      @mixin mediumScreensMaxWidth890{
+      @mixin largeScreensMaxWidth1186{
         padding: 0 3.438em;
       }
       @mixin mediumScreensMaxWidth890{
@@ -42,6 +35,9 @@
     }
     &--section-2{
       margin:0 0 1.1em 0;
+      @mixin smallScreensMaxWidth375{
+        min-height: 78vh;
+      }
     }
     &--content{
       padding: 0 0 0 13.5em;
@@ -235,6 +231,9 @@
       }
       @mixin mediumScreensMaxWidth768{
         min-height:247px;
+      }
+      @mixin smallScreensMaxWidth565{
+        padding: 0 2em;
       }
     }
     &--image{
