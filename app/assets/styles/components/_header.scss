@@ -5,6 +5,9 @@
       @mixin mediumScreensMaxWidth768{
         margin:0;
       }
+      @mixin smallScreensMaxWidth375{
+        margin:2em 0;
+      }
     }
     &-inner{
       display:flex;

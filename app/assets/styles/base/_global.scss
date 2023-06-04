@@ -15,23 +15,23 @@ body{
   flex-direction: column;
   @font-face {
     font-family: 'Barlow Regular';
-    src:url('/assets/styles/fonts/Barlow-Regular.ttf'); 
+    src:url('./assets/styles/fonts/Barlow-Regular.ttf'); 
     }
   @font-face {
     font-family: 'Barlow Condensed';
-    src:url('/assets/styles/fonts/BarlowCondensed-Regular.ttf'); 
+    src:url('./assets/styles/fonts/BarlowCondensed-Regular.ttf'); 
     }
   @font-face {
     font-family: 'Barlow Bold';
-    src:url('/assets/styles/fonts/BarlowCondensed-Bold.ttf'); 
+    src:url('./assets/styles/fonts/BarlowCondensed-Bold.ttf'); 
   }
   @font-face {
     font-family: 'Barlow Black';
-    src:url('/assets/styles/fonts/BarlowCondensed-Black.ttf'); 
+    src:url('./assets/styles/fonts/BarlowCondensed-Black.ttf'); 
   }
   @font-face{
     font-family: 'Bellefair';
-    src:url('/assets/styles/fonts/Bellefair-Regular.ttf');
+    src:url('./assets/styles/fonts/Bellefair-Regular.ttf');
   }
   font-family: 'Bellefair';
 }

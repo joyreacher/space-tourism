@@ -5,9 +5,9 @@ const Header = ({ active }) => {
   return (
     <>
     <picture>
-        <source srcSet={`assets/images/${fileName}/background-${fileName}-desktop.jpg 768w`} media="(min-width:769px)"/>
-        <source srcSet={`assets/images/${fileName}/background-${fileName}-tablet.jpg 768w`} media="(min-width:565px)"/>
-        <img srcSet={`assets/images/${fileName}/background-${fileName}-mobile.jpg 375w`} alt="background-small" id="bg-image" />
+        <source srcSet={`./assets/images/${fileName.toLowerCase()}/background-${fileName.toLowerCase()}-desktop.jpg 768w`} media="(min-width:769px)"/>
+        <source srcSet={`./assets/images/${fileName.toLowerCase()}/background-${fileName.toLowerCase()}-tablet.jpg 768w`} media="(min-width:565px)"/>
+        <img srcSet={`./assets/images/${fileName.toLowerCase()}/background-${fileName.toLowerCase()}-mobile.jpg 375w`} alt="background-small" id="bg-image" />
       </picture>  
     <section className='header'>
       <div className='header__container-outer'>
